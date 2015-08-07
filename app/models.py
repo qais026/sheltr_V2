@@ -17,3 +17,27 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+##Edits
+class Category(models.Model):
+    name = models.CharField(max_length=128, unique=True)
+
+    def __str__(self):
+        return self.name
+
+class Provider(models.Model):
+    provider_name = models.CharField(max_length=128)
+    location_name = models.CharField(max_length=128, null=True, blank=True)
+    website = models.CharField(max_length=128, null=True, blank=True)
+    address1 = models.CharField(max_length=128, blank=True)
+    address2 = models.CharField(max_length=128, blank=True)
+    city = models.CharField(max_length=128, blank=True)
+    state = models.CharField(max_length=128, blank=True)
+    zipcode = models.CharField(max_length=128, blank=True)
+    contact = models.CharField(max_length=128, blank=True)
+    phone = models.CharField(max_length=128, blank=True)
+    hours = models.CharField(max_length=1000, blank=True)
+    category = models.ForeignKey(Category)
+    
+    def __str__(self):
+        return self.provider_name
