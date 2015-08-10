@@ -1,0 +1,8 @@
+To Do List
+
+-In population.py, add_provider is not working for sheltr (labeled #not working)
+-Utilitize the same methods as "population.py" to develop CSV-DB (or ideally, xlsx-DB)
+
+
+Long term
+-Convert to either Postgres or MySQL (Postgres is opensource), currently SQLite3 or something

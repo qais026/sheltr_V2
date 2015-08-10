@@ -37,7 +37,7 @@ class Provider(models.Model):
     zipcode = models.CharField(max_length=128, blank=True)
     contact = models.CharField(max_length=128, blank=True)
     phone = models.CharField(max_length=128, blank=True)
-    hours = models.CharField(max_length=1000, blank=True)
+    hours = models.CharField(max_length=128, blank=True)
     
     def __str__(self):
         return self.provider_name

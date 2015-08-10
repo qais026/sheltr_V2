@@ -57,20 +57,35 @@ def populate():
         hours='9-5',
         )
 
-	# add_provider(
- #                category=All,
- #        provider_name='Sheltr.org',
- #        location_name='Internet',
- #        website='www.sheltr.org',
- #        address1='Online',
- #        address2='',
- #        city='Baltimore',
- #        state='Maryland',
- #        zipcode='21218',
- #        contact='info@sheltr.org',
- #        phone='None',
- #        hours='24/7',
- #        )
+    add_provider(
+        category=All,
+        provider_name='sheltr.org',
+        location_name='Internet',
+        website='www.sheltr.org',
+        address1='Online',
+        address2='',
+        city='Baltimore',
+        state='Maryland',
+        zipcode='21218',
+        contact='info@sheltr.com',
+        phone='N/A',
+        hours='24/7',
+        )
+
+    add_provider(
+        category=All,
+        provider_name='MD211',
+        location_name='Maryland 211',
+        website='www.md211.gov',
+        address1='Online',
+        address2='',
+        city='Baltimore',
+        state='Maryland',
+        zipcode='21218',
+        contact='211',
+        phone='211',
+        hours='24/7',
+        )
 
     for c in Category.objects.all():
         for p in Provider.objects.filter(category=c):
@@ -99,5 +114,7 @@ def add_category(name):
 
 # Start execution here!
 if __name__ == '__main__':
+    print ("")
     print ("Starting testing population script...")
+    print ("")
     populate()
