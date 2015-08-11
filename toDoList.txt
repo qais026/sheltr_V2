@@ -1,7 +1,10 @@
 To Do List
 
--In population.py, add_provider is not working for sheltr (labeled #not working)
--Utilitize the same methods as "population.py" to develop CSV-DB (or ideally, xlsx-DB)
+-Add link to the search page in the header (/search page)
+-Search results should link to a list of providers with that category
+	-Each one should be a link to a more detailed view of that provider
+
+-In population.py, add_provider is not working for sheltr (labeled #not working
 
 
 Long term
