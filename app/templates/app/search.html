@@ -10,10 +10,17 @@
         {% if categories %}
             <ul>
                 {% for category in categories %}
-   <!--              links to the category list -->
-                <li>{{ category.name }}</a></li>
+                <!-- Following line changed to add an HTML hyperlink -->
+                <li><a href="/app/category/{{category.slug}}">{{ category.name }}</a></li>
                 {% endfor %}
             </ul>
+        
+<!--             <ul>
+                {% for category in categories %}
+                links to the category list
+                <li>{{ category.name }}</a></li>
+                {% endfor %}
+            </ul> -->
         {% else %}
             <strong>There are no categories present.</strong>
         {% endif %}
