@@ -10,7 +10,7 @@
         {% if providers %}
         <ul>
             {% for provider in providers %}
-            <li>{{ provider.provider_name }}
+            <h1><u>{{ provider.provider_name }}</u></h1>
                 <ul>
                     <li>{{ provider.location_name }}</li>
                     <li>{{ provider.website }}</li>
@@ -18,7 +18,6 @@
                     <li>{{ provider.city }}</li>
                     <li>{{ provider.state }}</li>
                 </ul>
-            </li>
             {% endfor %}
         </ul>
         {% else %}
