@@ -1,3 +1,4 @@
+{% extends "app/base_search.html" %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,6 +6,7 @@
     </head>
 
     <body>
+        {% block content %}
         <h1>Here are some categories to search!</h1>
 
         {% if categories %}
@@ -24,5 +26,6 @@
         {% else %}
             <strong>There are no categories present.</strong>
         {% endif %}
+        {% endblock %}
     </body>
 </html>
