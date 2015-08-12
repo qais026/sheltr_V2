@@ -10,12 +10,15 @@
         {% if providers %}
         <ul>
             {% for provider in providers %}
-            <li>{{ provider.provider_name }}</li>
-            <li>{{ provider.location_name }}</li>
-            <li>{{ provider.website }}</li>
-            <li>{{ provider.address1 }}</li>
-            <li>{{ provider.city }}</li>
-            <li>{{ provider.state }}</li>
+            <li>{{ provider.provider_name }}
+                <ul>
+                    <li>{{ provider.location_name }}</li>
+                    <li>{{ provider.website }}</li>
+                    <li>{{ provider.address1 }}</li>
+                    <li>{{ provider.city }}</li>
+                    <li>{{ provider.state }}</li>
+                </ul>
+            </li>
             {% endfor %}
         </ul>
         {% else %}
