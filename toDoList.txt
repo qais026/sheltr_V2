@@ -1,11 +1,49 @@
 To Do List
 
--Add link to the search page in the header (/search page)
 -Search results should link to a list of providers with that category
 	-Each one should be a link to a more detailed view of that provider
 
--In population.py, add_provider is not working for sheltr (labeled #not working
+-In population.py, add_provider is not working for sheltr (labeled #not working)
+-See search for more detail on what populate.py should eventually become
 
 
 Long term
 -Convert to either Postgres or MySQL (Postgres is opensource), currently SQLite3 or something
+
+Home Page
+-All empty page, one color background, with Sheltr logo in a circle, in the middle.
+-When the circle is clicked, it will "pop" into four circles -> About Us, Blog, Search, and PHC (PHC is project homeless connect)
+-Each of these is a link to a "main page" of each of the four pages, details of which are listed below
+-Each of the 4 pages will have a consistent header and footer, with links to all four of the sections
+-Possible function
+	-jqueryscript.net, material design action button transition effect
+	-Button with built in loading indicator (three dots, swirl, for example)
+
+Search
+-Be able to input information from the excel sheet directly into the app database (suggestion, openpyxl)
+-Data checking/clear out old data
+-Alert admin when data has not been changed/verified in a certain amount of time
+-Category object relation (in Provider) must be changed to a ManyToMany type, but allow for the same functionality as the current working site.
+-Search results should link to a list of providers with that category
+	-Each one should be a link to a more detailed view of that provider
+-Migrate to MySQL or PostgresSQL (Postgres is opensource, but will cost $15/month)
+
+Blog
+-Be able to link to the Facebook page
+-Be able to show images and movies without saving to the DB (images are fine)
+-Show link previews
+-Input should be available by username/login, of which a different one per team member (that can be activated or deactivated)
+-Email to blog update would be ideal
+
+About Us
+-Have a description of Sheltr
+-A section with the "thanks" to people who have contributed or advised
+-Working email/contact us section
+-Link to facebook page
+-Possible donations page when this is set-up
+
+PHC
+-Focus will be on transitional housing
+-A nested form function to list and rank results
+-Ideally, rank by "perfect match", but list other "close matches" as well (if possible, list why not fully qualified)
+-Dynamically updating
