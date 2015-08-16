@@ -84,4 +84,4 @@ def about(request):
         # Project Housing Connect page view
 def PHC(request):
     context_dict = {}
-    return render(request, 'app/PHC.html', context_dict)
+    return render(request, 'app/phc.html', context_dict)
