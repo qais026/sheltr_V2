@@ -78,4 +78,4 @@ def category(request, category_name_slug):
 
 def about(request):
     context_dict = {}
-    return render(request, 'app/about.html', context_dict)
+    return (request, 'app/about.html', context_dict)
