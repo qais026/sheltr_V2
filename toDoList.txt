@@ -1,11 +1,6 @@
 To Do List
 
--Search results should link to a list of providers with that category
-	-Each one should be a link to a more detailed view of that provider
-
--In population.py, add_provider is not working for sheltr (labeled #not working)
--See search for more detail on what populate.py should eventually become
-
+-Will need to switch to "hacker" ($5/month) or "web dev" ($12/month) in september
 
 Long term
 -Convert to either Postgres or MySQL (Postgres is opensource), currently SQLite3 or something
@@ -20,7 +15,7 @@ Home Page
 	-Button with built in loading indicator (three dots, swirl, for example)
 
 Search
--Be able to input information from the excel sheet directly into the app database (suggestion, openpyxl)
+-Be able to input information from the excel sheet directly into the app database (suggestion, openpyxl) similar to "populate.py"
 -Data checking/clear out old data
 -Alert admin when data has not been changed/verified in a certain amount of time
 -Category object relation (in Provider) must be changed to a ManyToMany type, but allow for the same functionality as the current working site.
