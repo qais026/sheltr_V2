@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static "css/app.css" %}">
+		<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+		<title>Sheltr | {% block title %}Search{% endblock %} </title>
+		<link rel="icon" href="{% static "icon/sheltricon.ico" %}">
+	</head>
+
+	<body>
+		<div class="page-header nav-container">
+			<ul>
+				<li><h1><a href="/search">Find Resources</a></h1>	</li>
+		    	<li><h1><a href="{% url 'post_list' %}">Blog</a></h1></li>	
+			</ul>
+		</div>
+		<div class="content container">
+	        <div class="row">
+	            <div class="col-md-8 light">
+	            {% block content %}
+	            {% endblock %}
+	            </div>
+	        </div>
+	    </div>
+	</body>
+</html>
