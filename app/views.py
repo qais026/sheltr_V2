@@ -76,6 +76,12 @@ def category(request, category_name_slug):
     # Go render the response and return it to the client.
     return render(request, 'app/category.html', context_dict)
 
+        # About Us page view
 def about(request):
     context_dict = {}
     return render(request, 'app/about.html', context_dict)
+
+        # Project Housing Connect page view
+def PHC(request):
+    context_dict = {}
+    return render(request, 'app/PHC.html', context_dict)
