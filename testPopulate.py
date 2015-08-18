@@ -6,7 +6,7 @@ django.setup()
 
 from app.models import Category, Provider
 
-def populate():
+def testPopulate():
 
     health=add_category('Health Services')
     legal=add_category('Legal Services')
@@ -93,7 +93,7 @@ def populate():
 
 
 def add_provider(provider_name, location_name, website, address1, address2, city, state, zipcode, contact, phone,  hours, category):
-    p = Provider.objects.get_or_create(category=category)[0]
+    p = Provider.objects.create()
     p.provider_name=provider_name
     p.location_name=location_name
     p.website=website
@@ -106,6 +106,8 @@ def add_provider(provider_name, location_name, website, address1, address2, city
     p.phone=phone
     p.hours=hours
     p.save()
+    p.category=category
+    p.save()
     return p
 
 def add_category(name):
@@ -117,4 +119,4 @@ if __name__ == '__main__':
     print ("")
     print ("Starting testing population script...")
     print ("")
-    populate()
+    testPopulate()
