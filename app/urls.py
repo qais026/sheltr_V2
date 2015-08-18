@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     url(r'^search/$', views.search, name='search'),
     url(r'^app/category/(?P<category_name_slug>[\w\-]+)/$', views.category, name='category'),
     url(r'^about/$', views.about, name="about"),
-    url(r'(?i)^PHC/$', views.PHC, name="PHC"),) # case insensitive regex for PHC
+    url(r'^(?i)PHC/$', views.PHC, name="PHC"),
+    url(r'^home/$', views.home, name='home'),) # case insensitive regex for PHC

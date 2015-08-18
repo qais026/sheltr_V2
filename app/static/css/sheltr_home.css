@@ -1,0 +1,43 @@
+#page {
+	background-color: #B3E5FC;
+	background-size: 100% 100%;
+	width:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+	bottom:0px;
+}
+
+
+#center-circle {
+	height:25%;
+	width:18%;
+}
+
+.circle {
+	text-align: center;
+	position:absolute;
+	background:#FFEB3B;
+	top:50%;
+	left:50%;
+	border-radius: 50%;
+	transform:translate(-50%,-66%);
+}
+
+.center-text {
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-66%);
+	font-family: sans-serif;
+	font-size: 1.5em;
+	font-style: italic;
+}
+
+.circle:hover {
+	background: yellow;
+}
+
+.hide-init {
+	display: none;
+}
