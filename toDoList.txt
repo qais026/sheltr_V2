@@ -5,14 +5,14 @@ To Do List
 Long term
 -Convert to either Postgres or MySQL (Postgres is opensource), currently SQLite3 or something
 
+General
+-Base.html files for all headers/footers, with links to each sub page (search, blog, about us, PHC), with current page being highlighted
+-Consistent font usage across all pages
+
 Home Page
--All empty page, one color background, with Sheltr logo in a circle, in the middle.
--When the circle is clicked, it will "pop" into four circles -> About Us, Blog, Search, and PHC (PHC is project homeless connect)
--Each of these is a link to a "main page" of each of the four pages, details of which are listed below
--Each of the 4 pages will have a consistent header and footer, with links to all four of the sections
--Possible function
-	-jqueryscript.net, material design action button transition effect
-	-Button with built in loading indicator (three dots, swirl, for example)
+-Icons/writing on home page are not mobile optimized, lets change all to jpegs and see if that works
+-Match background colors of sub page headers, and main page background (preferably made in a way where if one changes, all change)
+-Edits jpegs for page icons to be custom (including main one as Sheltr logo)
 
 Search
 -Be able to input information from the excel sheet directly into the app database (suggestion, openpyxl) similar to "populate.py"
