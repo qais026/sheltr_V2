@@ -1,6 +1,8 @@
 To Do List
 
 -Will need to switch to "hacker" ($5/month) or "web dev" ($12/month) in september
+-Update the tables in pythonanywhere
+-Update the "Making Sheltr Live" google doc on dropping tables
 
 Long term
 -Convert to either Postgres or MySQL (Postgres is opensource), currently SQLite3 or something
@@ -18,7 +20,6 @@ Search
 -Be able to input information from the excel sheet directly into the app database (suggestion, openpyxl) similar to "populate.py"
 -Data checking/clear out old data
 -Alert admin when data has not been changed/verified in a certain amount of time
--Category object relation (in Provider) must be changed to a ManyToMany type, but allow for the same functionality as the current working site.
 -Search results should link to a list of providers with that category
 	-Each one should be a link to a more detailed view of that provider
 -Migrate to MySQL or PostgresSQL (Postgres is opensource, but will cost $15/month)
