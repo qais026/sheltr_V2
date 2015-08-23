@@ -6,7 +6,7 @@ django.setup()
 
 from app.models import Category, Provider
 
-def populate():
+def testPopulate():
 
     health=add_category('Health Services')
     legal=add_category('Legal Services')
@@ -14,7 +14,6 @@ def populate():
     All=add_category('All')
 
     add_provider(
-        category=health,
         provider_name='Example Location',
         location_name='Baltimore Office of Stuff',
         website='www.google.com',
@@ -26,10 +25,10 @@ def populate():
         contact='admin@example.com',
         phone='1-800-301-1234',
         hours='9-5',
+        categories = [health, legal],
         )
 
     add_provider(
-        category=legal,
         provider_name='Legal Place Co',
         location_name='Walmart',
         website='www.legalzoom.com',
@@ -41,9 +40,9 @@ def populate():
         contact='admin@legal.com',
         phone='1-800-240-5069',
         hours='9-5',
+        categories = [legal]
         )
     add_provider(
-    	category=housing,
     	provider_name='Houses.com',
         location_name='Internet',
         website='www.houses.com',
@@ -55,10 +54,10 @@ def populate():
         contact='house@houses.com',
         phone='1-800-HOUSE',
         hours='9-5',
+        categories = [housing]
         )
 
     add_provider(
-        category=All,
         provider_name='sheltr.org',
         location_name='Internet',
         website='www.sheltr.org',
@@ -70,10 +69,10 @@ def populate():
         contact='info@sheltr.com',
         phone='N/A',
         hours='24/7',
+        categories = [health, legal, housing]
         )
 
     add_provider(
-        category=All,
         provider_name='MD211',
         location_name='Maryland 211',
         website='www.md211.gov',
@@ -85,16 +84,14 @@ def populate():
         contact='211',
         phone='211',
         hours='24/7',
+        categories = [health, legal]
         )
 
-    for c in Category.objects.all():
-        for p in Provider.objects.filter(category=c):
-            print (str(c), " - ", str(p))
+   # print (str(p))
 
 
-def add_provider(provider_name, location_name, website, address1, address2, city, state, zipcode, contact, phone,  hours, category):
-    p = Provider.objects.get_or_create(category=category)[0]
-    p.provider_name=provider_name
+def add_provider(provider_name, location_name, website, address1, address2, city, state, zipcode, contact, phone,  hours, categories):
+    p = Provider.objects.get_or_create(provider_name=provider_name)[0]
     p.location_name=location_name
     p.website=website
     p.address1=address1
@@ -106,6 +103,7 @@ def add_provider(provider_name, location_name, website, address1, address2, city
     p.phone=phone
     p.hours=hours
     p.save()
+    p.category.add(*Category.objects.filter(name__in=categories))
     return p
 
 def add_category(name):
@@ -117,4 +115,4 @@ if __name__ == '__main__':
     print ("")
     print ("Starting testing population script...")
     print ("")
-    populate()
+    testPopulate()
