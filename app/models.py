@@ -31,7 +31,7 @@ class Category(models.Model):
         return self.name
 
 class Provider(models.Model):
-    category = models.ForeignKey(Category)
+    #Django automatically creates a primary key for a model
     provider_name = models.CharField(max_length=128)
     location_name = models.CharField(max_length=128, null=True, blank=True)
     website = models.CharField(max_length=128, null=True, blank=True)
@@ -43,6 +43,6 @@ class Provider(models.Model):
     contact = models.CharField(max_length=128, blank=True)
     phone = models.CharField(max_length=128, blank=True)
     hours = models.CharField(max_length=128, blank=True)
-    
+    category = models.ManyToManyField(Category, blank=True)
     def __str__(self):
         return self.provider_name
