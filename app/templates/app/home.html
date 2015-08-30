@@ -6,12 +6,38 @@
 	</head>
 	<body>
 		<div id="page">
-			<a href="{% url 'search' %}"><div class="circle hide-init" id="1"><div class="center-text">Search</div></div></a>
-			<a href="{% url 'about' %}"><div class="circle hide-init" id="2"><div class="center-text">About Us</div></div></a>
-			<a href="{% url 'post_list' %}"><div class="circle hide-init" id="3"><div class="center-text">Blog</div></div></a>
-			<a href="{% url 'PHC' %}"><div class="circle hide-init" id="4"><div class="center-text">Project Homeless Connect</div></div></a>
-			<div class="circle" id="center-circle">
-				<div class="center-text">sheltr</div>
+			<div>
+				<a href="{% url 'search' %}">
+					<div class="circle hide-init" id="1">
+						<div class="center-text">Search</div>
+					</div>
+				</a>
+			</div>
+			<div>
+				<a href="{% url 'about' %}">
+					<div class="circle hide-init" id="2">
+						<div class="center-text">About Us</div>
+					</div>
+				</a>
+			</div>
+			<div>
+				<a href="{% url 'post_list' %}">
+					<div class="circle hide-init" id="3">
+						<div class="center-text">Blog</div>
+					</div>
+				</a>
+			</div>
+			<div>
+				<a href="{% url 'PHC' %}">
+					<div class="circle hide-init" id="4">
+						<div class="center-text">Project Homeless Connect</div>
+					</div>
+				</a>
+			</div>
+			<div>
+				<div class="circle" style="background:url({% static 'images/icon.jpg' %}) no-repeat; background-position: center; background-size: 9vw 26vh; background-color:white;" id="center-circle">
+					<div class="center-text"></div>
+				</div>
 			</div>
 
 		</div>
