@@ -6,6 +6,7 @@ To Do List
 
 Long term
 -Convert to either Postgres or MySQL (Postgres is opensource), currently SQLite3 or something
+-Create batch file for updating local sheltr code
 
 General
 -Base.html files for all headers/footers, with links to each sub page (search, blog, about us, PHC), with current page being highlighted
