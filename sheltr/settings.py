@@ -102,3 +102,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+PHC_TH_DATA_FILE_PATH = os.path.join(BASE_DIR, 'test.xlsx') #TODO: Give file path here
