@@ -102,19 +102,19 @@ class Command(NoArgsCommand):
             phc_th_sheet = phc_th_file[phc_th_file.get_sheet_names()[0]]
             
             provider_header, category_header = get_sheet_headers(phc_th_sheet)
-            print "Successfully, parsed excel file."
+            print ("Successfully, parsed excel file.")
             
             populate_categories(category_header)
-            print "Successfully, created/updated categories."
+            print ("Successfully, created/updated categories.")
             
             populate_providers(phc_th_sheet, provider_header, category_header)
-            print "Successfully, created/updated providers."
+            print ("Successfully, created/updated providers.")
             
         except IOError:
-            print "Sorry, Unable to open data file to parse and upload data in db."
-            print "Please fix the file path in project's settings."
+            print ("Sorry, Unable to open data file to parse and upload data in db.")
+            print ("Please fix the file path in project's settings.")
         
         except Exception as ex:
-            print "Oops Sorry! Something went seriously Wrong. Please contact administrator"
-            print "Reason: %s" % repr(ex)
+            print ("Oops Sorry! Something went seriously Wrong. Please contact administrator")
+            print ("Reason: %s" % repr(ex))
         
