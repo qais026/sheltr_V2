@@ -26,6 +26,18 @@
         {% else %}
             <strong>There are no categories present.</strong>
         {% endif %}
+        <form method="get" action=".">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Search"/>
+        </form>
+        {% if providers %}
+            {% for x in providers %} 
+                {{ x.provider_name }}
+            {% endfor %}
+        {% else %}
+            No providers available.  
+        {% endif %}
         {% endblock %}
     </body>
 </html>
