@@ -7,7 +7,8 @@ from django.core.management.base import NoArgsCommand
 from app.models import Category, Provider
 
 
-remov_non_ascii = lambda s: str(filter(lambda x: x in string.printable, s))
+#remov_non_ascii = lambda s: str(filter(lambda x: x in string.printable, s))
+remov_non_ascii = lambda s: ''.join(list(filter(lambda x: x in string.printable, s)))
 
 col2num = lambda col: reduce(lambda x, y: x*26 + y, [ord(c.upper()) - ord('A') + 1 for c in col])
 
