@@ -7,7 +7,7 @@ from django.core.management.base import NoArgsCommand
 from app.models import Category, Provider
 
 
-remov_non_ascii = lambda s: filter(lambda x: x in string.printable, s)
+remov_non_ascii = lambda s: str(filter(lambda x: x in string.printable, s))
 
 col2num = lambda col: reduce(lambda x, y: x*26 + y, [ord(c.upper()) - ord('A') + 1 for c in col])
 
@@ -59,7 +59,7 @@ def get_sheet_headers(phc_th_sheet):
             flag = True
             pflag = False
             continue
-        cell_value = str(remov_non_ascii(cell.value)).replace(' ', '_').lower()
+        cell_value = remov_non_ascii(cell.value).replace(' ', '_').lower()
         if flag:
             category_header[cell.column] = cell_value
         if pflag:
