@@ -59,7 +59,7 @@ def get_sheet_headers(phc_th_sheet):
             flag = True
             pflag = False
             continue
-        cell_value = remov_non_ascii(cell.value).replace(' ', '_').lower()
+        cell_value = str(remov_non_ascii(cell.value)).replace(' ', '_').lower()
         if flag:
             category_header[cell.column] = cell_value
         if pflag:
