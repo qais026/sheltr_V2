@@ -9,12 +9,7 @@
 		<link rel="icon" href="{% static "icon/sheltricon.ico" %}">
 	</head>
 	<body>
-		<div class="page-header nav-container">
-			<ul>
-				<li><h1><a href="/search">Find Resources</a></h1>	</li>
-		    	<li><h1><a href="{% url 'post_list' %}">Blog</a></h1></li>	
-			</ul>
-		</div>
+        {% include "app/navigationbar.html" with active="search" %}
 		<div class="content container">
 	        <div class="row">
 	            <div class="col-md-8 light">

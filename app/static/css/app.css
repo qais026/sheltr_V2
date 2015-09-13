@@ -35,6 +35,11 @@ body {
     color: black;
 }
 
+.nav-container ul li h1 a.active {
+    font-weight: bold;
+    color: black;
+}
+
 .content {
     margin-left: 40px;
 }
@@ -73,4 +78,8 @@ h1, h2, h3, h4 {
 
 .light {
     background-color: #FFF3E0
+}
+
+.active{
+    color: #FF0000;
 }
