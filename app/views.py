@@ -52,6 +52,9 @@ def search(request):
         if form.is_valid():
             category=form.cleaned_data['resourceType']
             sqs = sqs.filter(category=category)
+
+            if form.cleaned_data['questionOne'] == "YES":
+                sqs = sqs.filter(address1="Online");
     else:
         form = SearchForm() 
     form = SearchForm

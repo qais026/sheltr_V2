@@ -10,7 +10,8 @@ class PostForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
 	resourceType = forms.ModelMultipleChoiceField(queryset=None, label="Category")
-
+	questionOneChoices = (('YES', "Yes"), ('NO', "No"),)
+	questionOne = forms.ChoiceField(choices=questionOneChoices, label="Online only?")
 	def __init__(self, *args, **kwargs):
 		super(SearchForm, self).__init__(*args, **kwargs)
 		self.fields['resourceType'].queryset = Category.objects.all()
