@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post, Category, Provider
-from .forms import PostForm
+from .forms import PostForm, SearchForm
 from django.shortcuts import redirect
 
 # Create your views here.
@@ -45,9 +45,22 @@ def post_edit(request, pk):
     return render(request, 'app/post_edit.html', {'form': form})
 
 def search(request):
+    sqs = Provider.objects.all()
     category_list = Category.objects.all()
-    context_dict = {'categories': category_list}
+    if request.method == "GET":
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            category=form.cleaned_data['resourceType']
+            sqs = sqs.filter(category=category)
 
+            if form.cleaned_data['questionOne'] == "YES":
+                sqs = sqs.filter(address1="Online");
+    else:
+        form = SearchForm() 
+    form = SearchForm
+    context_dict = {'categories': category_list,
+        'form': form,
+        'providers': sqs}
     return render(request, 'app/search.html', context_dict)
 
 def category(request, category_name_slug):
