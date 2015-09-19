@@ -2,6 +2,7 @@
 
 Fork https://github.com/qais026/sheltr_V2
 
+'''
 git clone git@github.com:YOUR_REPO/sheltr_V2.git
 cd sheltr_V2/
 virtualenv venv
@@ -14,7 +15,10 @@ python manage.py migrate
 python manage.py utils_populate_db_excel
 python manage.py createsuperuser
 python manage.py runserver
+'''
 
+'''
 Visit http://0.0.0.0:8000/
 and
 http://0.0.0.0:8000/admin
+'''
