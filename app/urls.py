@@ -8,7 +8,6 @@ urlpatterns = patterns('',
     url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
     url(r'^search/$', views.search, name='search'),
     url(r'^app/category/(?P<category_name_slug>[\w\-]+)/$', views.category, name='category'),
-    url(r'^about/$', views.about, name="about"),
     url(r'^(?i)PHC/$', views.PHC, name="PHC"),
     url(r'^$', views.home, name='home'), # case insensitive regex for PHC
     url(r'^contact/', include('contact_form.urls')),

@@ -10,14 +10,15 @@
     </head>
 
 	<body>
-		<div class="page-header nav-container">
-			{% if user.is_authenticated %}
-				<a href="{% url "post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-		    {% endif %}
-		    <ul>
-			    <li><h1><a href="/search">Sheltr</a></h1></li>
-		    </ul>
-		</div>
+        {% include "app/navigationbar.html" with active="search" %}
+{#		<div class="page-header nav-container">#}
+{#			{% if user.is_authenticated and request.get_full_path == "/blog/" %}#}
+{#				<a href="{% url "post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>#}
+{#		    {% endif %}#}
+{#		    <ul>#}
+{#			    <li><h1><a href="/search">Sheltr</a></h1></li>#}
+{#		    </ul>#}
+{#		</div>#}
 	    <div class="container">
 	        <div class="row">
 	            <div class="col-md-8">
