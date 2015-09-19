@@ -50,11 +50,27 @@ def search(request):
     if request.method == "GET":
         form = SearchForm(request.GET)
         if form.is_valid():
-            category=form.cleaned_data['resourceType']
-            sqs = sqs.filter(category=category)
+  #          category=form.cleaned_data['resourceType']
+  #          sqs = sqs.filter(category=category)
 
-            if form.cleaned_data['questionOne'] == "YES":
-                sqs = sqs.filter(address1="Online");
+            if form.cleaned_data['questionAge'] == 'Under 18':
+                sqs = sqs.filter(category__slug='under_18')
+
+            if form.cleaned_data['questionGender'] == "MALE":
+                sqs = sqs.filter(category__name='male')
+            elif form.cleaned_data['questionGender'] == "FEMALE":
+                sqs = sqs.filter(category__slug='female')
+
+
+
+
+
+
+
+
+
+            
+
     else:
         form = SearchForm() 
     form = SearchForm
