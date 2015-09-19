@@ -21,3 +21,10 @@ Visit http://0.0.0.0:8000/
 and
 http://0.0.0.0:8000/admin
 ```
+
+### Links
+- [https://github.com/qais026/sheltr_V2](https://github.com/qais026/sheltr_V2)
+- [https://docs.google.com/document/d/1yjp6I4U1kw8kaToGsFWFTUgfS3LAVs1fNXWytT8O-Io/edit](https://docs.google.com/document/d/1yjp6I4U1kw8kaToGsFWFTUgfS3LAVs1fNXWytT8O-Io
+)
+- [http://adminsheltr.pythonanywhere.com/](http://adminsheltr.pythonanywhere.com/)
+
