@@ -1,4 +1,4 @@
-from django.conf.urls import url, patterns
+from django.conf.urls import url, patterns, include
 from . import views
 
 urlpatterns = patterns('',
@@ -10,4 +10,7 @@ urlpatterns = patterns('',
     url(r'^app/category/(?P<category_name_slug>[\w\-]+)/$', views.category, name='category'),
     url(r'^about/$', views.about, name="about"),
     url(r'^(?i)PHC/$', views.PHC, name="PHC"),
-    url(r'^$', views.home, name='home'),) # case insensitive regex for PHC
+    url(r'^$', views.home, name='home'), # case insensitive regex for PHC
+    url(r'^contact/', include('contact_form.urls')),
+)
+

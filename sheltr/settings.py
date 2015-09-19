@@ -105,3 +105,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 PHC_TH_DATA_FILE_PATH = os.path.join(BASE_DIR, 'test.xlsx') #TODO: Give file path here
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mapitherebmore@gmail.com'  # this is my email address, use yours
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']   # set environ yourself
+
+ADMINS = (
+    ('Sheltr', 'mapitherebmore@gmail.com'),   # email will be sent to your_email
+)
+
+MANAGERS = ADMINS
