@@ -94,7 +94,18 @@ def search(request):
                 sqs = sqs.exclude(Q(category__name='children_number_matters') & Q(category__name='children_num=1'))
 
             """ AGE OF CHILDREN """
-            #todo
+            younger16 = False
+            older17 = False
+            for age in form.cleaned_data['questionAgeChildren']:
+                if (age == 'Younger16'):   
+                    younger16 = True
+                elif (age == 'Older17'):
+                    older17 = True
+            if (younger16 and (older17 == False)):
+                sqs = sqs.exclude(Q(category__name='children_age_matters') & ~Q(category__name='children_age16'))
+            elif ((younger16 == False) and older17):
+                sqs = sqs.exclude(Q(category__name='children_age_matters') & ~Q(category__name='children_age17'))
+
 
             """ CRIMINAL RECORD """
             if form.cleaned_data['questionCriminal'] == "YES":
