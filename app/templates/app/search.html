@@ -7,33 +7,24 @@
 
     <body>
         {% block content %}
-        <h1>Here are some categories to search!</h1>
-
-        {% if categories %}
-            <ul>
-                {% for category in categories %}
-                <!-- Following line changed to add an HTML hyperlink -->
-                <li><a href="/app/category/{{category.slug}}">{{ category.name }}</a></li>
-                {% endfor %}
-            </ul>
-        
-<!--             <ul>
-                {% for category in categories %}
-                links to the category list
-                <li>{{ category.name }}</a></li>
-                {% endfor %}
-            </ul> -->
-        {% else %}
-            <strong>There are no categories present.</strong>
-        {% endif %}
+        <h1>Here are the Transitional Housing Providers to search!</h1>
+        <p><br></br></p>
+<!--         Displays the questionaire -->
         <form method="get" action=".">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Search"/>
         </form>
+<!--         Displaying the searched providers, the same ones that meet the characteristics requested by the customer., by going through the queryset of providers -->
         {% if providers %}
             {% for x in providers %} 
-                {{ x.provider_name }}
+            <!-- Provides the name, location, address, website, and phone number, mildly formatted -->
+                <li><b>{{ x.provider_name}}</b></li>
+                    <ul>Location: <i>{{ x.location_name}}</i></ul>
+                    <ul>Address: <i>{{ x.address1}}</i></ul>
+                    <ul>{{ x.website}}</ul>
+                    <ul>Phone: <i>{{ x.phone}}</i></ul>
+                <p><br></br></p>
             {% endfor %}
         {% else %}
             No providers available.  
