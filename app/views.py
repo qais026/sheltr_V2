@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import Post, Category, Provider
 from .forms import PostForm, SearchForm
 from django.shortcuts import redirect
+from django.db.models import Q
 
 # Create your views here.
 def home(request):
@@ -53,24 +54,76 @@ def search(request):
   #          category=form.cleaned_data['resourceType']
   #          sqs = sqs.filter(category=category)
 
+            """ AGE """
             if form.cleaned_data['questionAge'] == 'Under 18':
-                sqs = sqs.filter(category__slug='under_18')
-
+                sqs = sqs.exclude(Q(category__name='age_matters') & ~Q(category__name='under_18'))
+            elif form.cleaned_data['questionAge'] == '18-21':
+                sqs = sqs.exclude(Q(category__name='age_matters') & ~Q(category__name='18_to_21'))
+            elif form.cleaned_data['questionAge'] == '21-24':
+                sqs = sqs.exclude(Q(category__name='age_matters') & ~Q(category__name='21_to_24'))
+            elif form.cleaned_data['questionAge'] == '25-35':
+                sqs = sqs.exclude(Q(category__name='age_matters') & ~Q(category__name='25_35'))
+            elif form.cleaned_data['questionAge'] == 'Above 35':
+                sqs = sqs.exclude(Q(category__name='age_matters') & ~Q(category__name='above_35'))
+ 
+            """ GENDER """
             if form.cleaned_data['questionGender'] == "MALE":
-                sqs = sqs.filter(category__name='male')
+                sqs = sqs.exclude(Q(category__name='gender') & ~Q(category__name='male'))
             elif form.cleaned_data['questionGender'] == "FEMALE":
-                sqs = sqs.filter(category__slug='female')
+                sqs = sqs.exclude(Q(category__name='gender') & ~Q(category__name='female'))
+            elif form.cleaned_data['questionGender'] == "OTHER":
+                sqs = sqs.exclude(Q(category__name='gender') & ~Q(category__name='other_(transgender,_etc.)'))
 
+            """ VETERAN STATUS """
+            if form.cleaned_data['questionVeteranStatus'] == "YES":
+                sqs = sqs.exclude(Q(category__name='veteran_status_matters') & ~Q(category__name='veteran_status'))
+            elif form.cleaned_data['questionVeteranStatus'] == "NO":
+                sqs = sqs.exclude(Q(category__name='veteran_status_matters') & Q(category__name='veteran_status'))
+            
+            """ CHILDREN """
+            if form.cleaned_data['questionChildren'] == "YES":
+                sqs = sqs.exclude(Q(category__name='children_matter') & ~Q(category__name='have_children'))
+            elif form.cleaned_data['questionChildren'] == "NO":
+                sqs = sqs.exclude(Q(category__name='children_matter') & Q(category__name='have_children'))
 
+            """ # CHILDREN """
+            if form.cleaned_data['questionNumChildren'] == "ONE":
+                sqs = sqs.exclude(Q(category__name='children_number_matters') & Q(category__name='children_num=more_than_1'))
+            elif form.cleaned_data['questionNumChildren'] == "MORETHANONE":
+                sqs = sqs.exclude(Q(category__name='children_number_matters') & Q(category__name='children_num=1'))
 
-
-
-
-
-
-
+            """ AGE OF CHILDREN """
             
 
+            """ CRIMINAL RECORD """
+            if form.cleaned_data['questionCriminal'] == "YES":
+                sqs = sqs.exclude(Q(category__name='criminal_record_matters') & ~Q(category__name='criminal_record'))
+            elif form.cleaned_data['questionCriminal'] == "NO":
+                sqs = sqs.exclude(Q(category__name='criminal_record_matters') & Q(category__name='criminal_record'))
+
+            """ SUBSTANCE ABUSE """
+            if form.cleaned_data['questionSubstanceAbuse'] == "YES":
+                sqs = sqs.exclude(Q(category__name='substance_abuse_matters') & ~Q(category__name='substance_abuse'))
+            elif form.cleaned_data['questionSubstanceAbuse'] == "NO":
+                sqs = sqs.exclude(Q(category__name='substance_abuse_matters') & Q(category__name='substance_abuse'))
+
+            """ HIV """
+            if form.cleaned_data['questionHIV'] == "YES":
+                sqs = sqs.exclude(Q(category__name='hiv_status_matters') & ~Q(category__name='hiv_status'))
+            elif form.cleaned_data['questionHIV'] == "NO":
+                sqs = sqs.exclude(Q(category__name='hiv_status_matters') & Q(category__name='hiv_status'))
+
+            """ MENTAL STATUS """
+            if form.cleaned_data['questionMentalStatus'] == "YES":
+                sqs = sqs.exclude(Q(category__name='mental_health_matters') & ~Q(category__name='mental_health'))
+            elif form.cleaned_data['questionMentalStatus'] == "NO":
+                sqs = sqs.exclude(Q(category__name='mental_health_matters') & Q(category__name='mental_health'))
+
+            """ DISABILITY STATUS """
+            if form.cleaned_data['questionDisability'] == "YES":
+                sqs = sqs.exclude(Q(category__name='_') & ~Q(category__name='disability'))
+            elif form.cleaned_data['questionDisability'] == "NO":
+                sqs = sqs.exclude(Q(category__name='_') & Q(category__name='disability'))  
     else:
         form = SearchForm() 
     form = SearchForm
