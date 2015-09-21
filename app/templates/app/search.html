@@ -10,12 +10,13 @@
         <h1>Here are the Transitional Housing Providers to search!</h1>
         <p><br></br></p>
 <!--         Displays the questionaire -->
-        <form method="get" action=".">
+        <form method="GET" action=".">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Search"/>
         </form>
 <!--         Displaying the searched providers, the same ones that meet the characteristics requested by the customer., by going through the queryset of providers -->
+    {% if query %}
         {% if providers %}
             {% for x in providers %} 
             <!-- Provides the name, location, address, website, and phone number, mildly formatted -->
@@ -29,6 +30,7 @@
         {% else %}
             No providers available.  
         {% endif %}
+    {% endif %}
         {% endblock %}
     </body>
 </html>

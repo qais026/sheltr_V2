@@ -13,7 +13,6 @@ class ageChildrenForm(forms.Form):
 	questionAgeChildren = forms.ChoiceField(label="How old is each child?", choices=ageChildrenChoices)
 
 class SearchForm(forms.Form):
-#	resourceType = forms.ModelMultipleChoiceField(queryset=None, label="Category")
 
 	yesno = (('YES', "Yes"), ('NO', "No"))
 	yesnona = ( ('NA', "Not Applicable"), ('YES', "Yes"), ('NO', "No"),)
@@ -38,10 +37,6 @@ class SearchForm(forms.Form):
 	questionAgeChildren = forms.MultipleChoiceField(label="If you have children, what are the ages of the children?",
 		choices=ageChildrenChoices, required=False, widget=forms.CheckboxSelectMultiple)
 
-
-	# ageChildrenFormSet = formset_factory(ageChildrenForm, extra=2)
-	# formset = ageChildrenFormSet()
-
 	questionCriminal = forms.ChoiceField(label="Have you been incarcerated?",
 		choices=yesno, required=False, widget=forms.RadioSelect)
 
@@ -58,11 +53,7 @@ class SearchForm(forms.Form):
 		choices=yesno, required=False, widget=forms.RadioSelect)
 
 	# questionWheelChair = forms.ChoiceField(label="If you a physical disability, do you have a wheelchair?",
-	# 	choices=yesnona, required=False)
-	
-
-
-
+	# 	choices=yesnona, required=False)	
 
 	def __init__(self, *args, **kwargs):
 		super(SearchForm, self).__init__(*args, **kwargs)

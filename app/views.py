@@ -46,13 +46,14 @@ def post_edit(request, pk):
     return render(request, 'app/post_edit.html', {'form': form})
 
 def search(request):
+    query = False
     sqs = Provider.objects.all()
     category_list = Category.objects.all()
     if request.method == "GET":
+        if ('csrfmiddlewaretoken' in request.GET):
+            query = True
         form = SearchForm(request.GET)
         if form.is_valid():
-  #          category=form.cleaned_data['resourceType']
-  #          sqs = sqs.filter(category=category)
 
             """ AGE """
             if form.cleaned_data['questionAge'] == 'Under 18':
@@ -93,7 +94,7 @@ def search(request):
                 sqs = sqs.exclude(Q(category__name='children_number_matters') & Q(category__name='children_num=1'))
 
             """ AGE OF CHILDREN """
-            
+            #todo
 
             """ CRIMINAL RECORD """
             if form.cleaned_data['questionCriminal'] == "YES":
@@ -129,7 +130,8 @@ def search(request):
     form = SearchForm
     context_dict = {'categories': category_list,
         'form': form,
-        'providers': sqs}
+        'providers': sqs,
+        'query': query}
     return render(request, 'app/search.html', context_dict)
 
 def category(request, category_name_slug):
