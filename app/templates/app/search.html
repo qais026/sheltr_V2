@@ -8,11 +8,6 @@
     <body>
         {% block content %}
         <h1>Here are the Transitional Housing Providers to search!</h1>
-                       {% for category in categories %}
-                <!-- Following line changed to add an HTML hyperlink -->
-                <li><a href="/app/category/{{category.slug}}">{{ category.name }}</a></li>
-                {% endfor %}
-            </ul>
         <p><br></br></p>
 <!--         Displays the questionaire -->
         <form method="GET" action=".">
