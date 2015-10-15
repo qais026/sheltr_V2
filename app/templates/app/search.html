@@ -1,20 +1,25 @@
-{% extends "app/base_search.html" %}
+{% extends "app/base.html" %}
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sheltr Search</title>
+        {% block title %} Search {% endblock %}
     </head>
-
-    <body>
+    <body> 
         {% block content %}
-        <h1>Here are the Transitional Housing Providers to search!</h1>
-        <p><br></br></p>
+        <div class="light">
+        <h1 id="formtitle">Here are the Transitional Housing Providers to search!</h1>
+        </br>
 <!--         Displays the questionaire -->
         <form method="GET" action=".">
             {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Search"/>
+            <div class="searchform">
+                {{ form.as_p }}
+            </div>
+            <div class="button-holder">
+                <input type="submit" id="search" value="Search"/>
+            </div>
         </form>
+        </div>
 <!--         Displaying the searched providers, the same ones that meet the characteristics requested by the customer., by going through the queryset of providers -->
 
 
@@ -22,7 +27,7 @@
         {% if providers %}
             {% for x in providers %} 
             <!-- Provides the name, location, address, website, and phone number, mildly formatted -->
-                <li><b>{{ x.provider_name}}</b></li>
+                <li><b>{{x.provider_name}}</b></li>
                     <ul>Location: <i>{{ x.location_name}}</i></ul>
                     <ul>Address: <i>{{ x.address1}}</i></ul>
                     <ul>{{ x.website}}</ul>

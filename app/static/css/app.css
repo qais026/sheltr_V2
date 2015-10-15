@@ -1,23 +1,57 @@
 h1 a {
     color: #333333;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
 }
 
 body {
     margin-left: 0px;
     font-size: 25px;
+    padding-top:80px;
+    padding-bottom:80px;
+}
+
+body h1 {
+    font-size: 1.2em;
 }
 
 .page-header {
-    background-color: #009900;
+    background-color: #2196F3;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 0px 5px 5px 30px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 1em;
     text-decoration: none;
+}
+
+.nav-container {
+-webkit-box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
+-moz-box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
+box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
+}
+
+.searchform label {
+    padding-right:30px;
+}
+
+.searchform p {
+    padding-bottom: 23px;
+}
+
+.searchform ul {
+    list-style-type: none;
+
+}
+
+.searchform ul li {
+    display: inline;
+    padding-right:20px;
+}
+
+.button-holder {
+    text-align: center;
 }
 
 .nav-container ul {
@@ -28,24 +62,22 @@ body {
 
 .nav-container ul li {
     display: inline-block;
-    padding-right: 2.5em;
+    padding-left: 2.5em;
 }
 
-.nav-container ul li h1 a:hover {
+.nav-container h1 a:hover {
     color: black;
+    text-decoration: underline;
 }
 
-.nav-container ul li h1 a.active {
-    font-weight: bold;
-    color: black;
+.nav-container ul a.active {
+    color: #BBDEFB;
+    text-decoration: underline;
 }
+
 
 .content {
     margin-left: 40px;
-}
-
-h1, h2, h3, h4 {
-    font-family: 'Shadows Into Light', cursive;
 }
 
 .date {
@@ -77,9 +109,19 @@ h1, h2, h3, h4 {
 }
 
 .light {
-    background-color: #FFF3E0
+    background-color: #E3F2FD;
+    padding:20px;
+    border:1px solid;
+    border-color:#328bd9;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .active{
     color: #FF0000;
+}
+
+#formtitle {
+    text-align: center;
 }

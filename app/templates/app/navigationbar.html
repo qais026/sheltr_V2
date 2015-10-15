@@ -1,14 +1,24 @@
-<!-- Code for navigation bar, simply specify what the 'active' parameter is when including this file in another template -->
 
-<div class="page-header nav-container">
-    {% if user.is_authenticated %}
-	    <a href="{% url "post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-    {% endif %}
-    <ul>
-	    <li><h1><a href="/search" class="{% if active == 'search' %}active{% endif %}">Sheltr</a></h1></li>
-        <li><h1><a href="#" class="{% if active == 'phc' %}active{% endif %}">Project Homeless Connect - Transitional Housing</a></h1></li>
-        <li><h1><a href="/search" class="{% if active == 'search' %}active{% endif %}">Find Resources</a></h1></li>
-        <li><h1><a href="{% url 'post_list' %}" class="{% if active == 'blog' %}active{% endif %}">Blog</a></h1></li>
-    	<li><h1><a href="{% url 'about' %}" class="{% if active == 'about' %}active{%endif%}">About Us</a></h1></li>
-    </ul>
-</div>
+<!-- Code for navigation bar, simply specify what the 'active' parameter is when including this file in another template -->
+<nav id="myNavbar" class="navbar navbar-fixed-top page-header nav-container" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+            </button>
+            <h1><a href="{% url 'search' %}" class="{% if request.path == '/search/' %}active{% endif %}">Sheltr</a></h1>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav">
+                <li><h1><a href="{% url 'post_list' %}" class="{% if request.path == '/blog' %}active{% endif %}">Blog</a></h1></li>
+                <li><h1><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About Us</a></h1></li>
+            </ul>
+        </div>
+    </div>
+
+
+</nav>
