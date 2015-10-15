@@ -25,6 +25,12 @@
 
     {% if query %}
         {% if providers %}
+        <p><br></br></p>
+        <p>
+            Check out these providers when you get a chance:
+            If no address is provided, the location may have multiple locations. Please try the phone number first.
+        </p>
+        <p><br></br></p>
             {% for x in providers %} 
             <!-- Provides the name, location, address, website, and phone number, mildly formatted -->
                 <li><b>{{x.provider_name}}</b></li>
