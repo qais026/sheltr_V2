@@ -1,6 +1,7 @@
 {% extends "app/base.html" %}
 {% load crispy_forms_tags %}
 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,10 +16,7 @@
         <form method="GET" action=".">
             {% csrf_token %}
             <div class="searchform">
-                {{ form|crispy }}
-            </div>
-            <div class="button-holder">
-                <input class="btn btn-lg btn-primary" type="submit" id="search" value="Search"/>
+                {% crispy form %}
             </div>
         </form>
         </div>

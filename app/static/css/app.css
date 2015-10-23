@@ -62,11 +62,14 @@ h1 {
 
 .searchform label {
     padding-right:30px;
+    padding-bottom:10px;
     display: block;
     width: 600px;
 }
 
-
+.searchform .form-group {
+    padding-bottom: 40px;
+}
 
 .button-holder {
     text-align: center;
