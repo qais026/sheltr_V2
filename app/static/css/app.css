@@ -62,21 +62,11 @@ h1 {
 
 .searchform label {
     padding-right:30px;
+    display: block;
+    width: 600px;
 }
 
-.searchform p {
-    padding-bottom: 23px;
-}
 
-.searchform ul {
-    list-style-type: none;
-
-}
-
-.searchform ul li {
-    display: inline;
-    padding-right:20px;
-}
 
 .button-holder {
     text-align: center;
@@ -152,4 +142,17 @@ h1 {
 
 #formtitle {
     text-align: center;
+}
+
+.controls label {
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+}
+.radio {
+    display: inline;
+}
+
+input[type='radio'] {
+    margin-top:10px;
 }
