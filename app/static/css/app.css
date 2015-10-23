@@ -14,22 +14,50 @@ body h1 {
     font-size: 1.2em;
 }
 
+#logo {
+    width:120px;
+    height:auto;
+    margin:0px;
+}
+
+h1 {
+    margin-top:0px;
+}
+
+.navbar > li > a, .navbar {
+    padding-top:0px !important; 
+    padding-bottom:0 !important;
+    height: 40px;
+}
 .page-header {
     background-color: #2196F3;
     margin-top: 0;
-    padding: 0px 5px 5px 30px;
+    padding: 0px 0px 0px 30px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 1em;
+    font-size: .8em;
     text-decoration: none;
+    margin-top: 16px;
+}
+
+#logoTitle {
+    margin-top: 4px;
+}
+
+.headerLink:hover {
+    opacity:0.5;
 }
 
 .nav-container {
--webkit-box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
--moz-box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
-box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
+    -webkit-box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
+    -moz-box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
+    box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
+}
+
+#endNav {
+    padding-right: 100px;
 }
 
 .searchform label {
