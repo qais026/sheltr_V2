@@ -21,29 +21,44 @@
         </form>
         </div>
 <!--         Displaying the searched providers, the same ones that meet the characteristics requested by the customer., by going through the queryset of providers -->
+        {% endblock %}
 
-
+{% block results %}
     {% if query %}
         {% if providers %}
-        <p><br></br></p>
-        <p>
-            Check out these providers when you get a chance:
-            If no address is provided, the location may have multiple locations. Please try the phone number first.
-        </p>
-        <p><br></br></p>
-            {% for x in providers %} 
-            <!-- Provides the name, location, address, website, and phone number, mildly formatted -->
-                <li><b>{{x.provider_name}}</b></li>
-                    <ul>Location: <i>{{ x.location_name}}</i></ul>
-                    <ul>Address: <i>{{ x.address1}}</i></ul>
-                    <ul>{{ x.website}}</ul>
-                    <ul>Phone: <i>{{ x.phone}}</i></ul>
-                <p><br></br></p>
-            {% endfor %}
-        {% else %}
-            No providers available.  
-        {% endif %}
+        <div class="container-fluid">
+            <div class="row">
+            <p><br></br></p>
+            <p>
+                Check out these providers when you get a chance:
+                If no address is provided, the location may have multiple locations. Please try the phone number first.
+            </p>
+            <p><br></br></p>
+            <div class="col-md-6 no-padding">
+            <div class="results-pane">
+                {% for x in providers %} 
+                <!-- Provides the name, location, address, website, and phone number, mildly formatted -->
+                <div class="provider-result">
+                    <li class="provider-name"><b>{{x.provider_name}}</b></li>
+                        <ul>Location: <i>{{ x.location_name}}</i></ul>
+                        <ul>Address: <i>{{ x.address1}}</i></ul>
+                        <ul>{{ x.website}}</ul>
+                        <ul>Phone: <i>{{ x.phone}}</i></ul>
+                </div>
+                {% endfor %}
+            {% else %}
+                No providers available.  
+            {% endif %}
+            </div>
+            </div>
+            <div class="col-md-6 no-padding">
+                <div class="map">
+                </div>
+            </div>
+            </div>
+        </div>
+
     {% endif %}
-        {% endblock %}
+{% endblock %}
     </body>
 </html>
