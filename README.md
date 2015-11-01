@@ -2,7 +2,7 @@
 
 Fork https://github.com/qais026/sheltr_V2
 
-If not done installed, install python 3 and postgresql
+If not installed, install python 3 and postgresql
 
 ```
 git clone git@github.com:YOUR_REPO/sheltr_V2.git
