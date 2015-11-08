@@ -1,4 +1,4 @@
-h1 a {
+h1 p a {
     color: #333333;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
 }
@@ -7,7 +7,7 @@ body {
     margin-left: 0px;
     font-size: 25px;
     padding-top:80px;
-    padding-bottom:80px;
+    padding-bottom:0px;
 }
 
 body h1 {
@@ -63,6 +63,15 @@ h1 {
     padding-right: 100px;
 }
 
+#footer {
+    background-color: #2196F3;
+    margin-bottom:0px;
+    padding: 15px;
+    padding-left:0px;
+    color: white;
+    font-size: .7em;
+}
+
 .searchform label {
     padding-right:30px;
     padding-bottom:10px;
@@ -99,6 +108,10 @@ h1 {
     text-decoration: underline;
 }
 
+#results-intro {
+    font-size:.7em;
+}
+
 .results-pane {
     border-top: solid 1px;
     border-bottom: solid 1px;
@@ -122,7 +135,6 @@ h1 {
     background: -o-linear-gradient(right, #E5FFE5, white); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right, #E5FFE5, white); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right, #E5FFE5, white); /* Standard syntax */
-    border-color: #338899;
 }
 
 .provider-name {

@@ -139,11 +139,17 @@ def search(request):
     else:
         form = SearchForm() 
     form = SearchForm
+
     context_dict = {'categories': category_list,
         'form': form,
         'providers': sqs,
         'query': query}
     return render(request, 'app/search.html', context_dict)
+
+def results(request):
+
+    context_dict = {'providers': sqs}
+    return render(request, 'app/results.html', context_dict)
 
 def category(request, category_name_slug):
 
