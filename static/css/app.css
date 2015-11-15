@@ -6,7 +6,7 @@ h1 p a {
 body {
     margin-left: 0px;
     font-size: 25px;
-    padding-top:50px;
+    padding-top:80px;
     padding-bottom:0px;
 }
 
@@ -84,86 +84,6 @@ h1 {
     position:relative;
 }
 
-#picture_one {
-    margin-top: 0px;
-}
-
-#picture_two {
-    margin-bottom:-400px;
-}
-
-#picture_three {
-    margin-top: 0px;
-}
-
-.transBox {
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 2em;
-}
-
-.transBoxWrapper {
-    top:40px;
-    left:40px;
-    position: absolute;
-}
-
-#start-looking {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    top:350px;
-    width:170px;
-}
-
-#start-looking a {
-    color:white;
-}
-
-#news_and_updates {
-    font-size:2em;
-}
-
-
-.crop {
-    height:425px;
-    position:relative;
-    overflow: hidden;
-    margin-bottom:20px;
-}
-
-.crop img {
-    height: 100%;
-    width:100%;
-    position:absolute;
-    z-index: -1;
-}
-
-
-#tb1 {
-    width:57%;
-    position: relative;
-}
-#tb2 {
-        width:84%;
-    position: relative;
-}
-#tb3 {
-        width:100%;
-    position: relative;
-}
-#tb4 {
-        width:60%;
-    position: relative;
-}
-
-.pictureText {
-    color: white;
-}
-
-.post_list {
-    margin-left:40px;
-}
-
 .searchform {
     padding-bottom:100px;
 }
@@ -181,10 +101,6 @@ h1 {
 
 .button-holder {
     text-align: center;
-}
-
-#myNavbar {
-    margin-bottom:0;
 }
 
 .nav-container ul {
@@ -275,9 +191,7 @@ h1 {
 }
 
 .post {
-    margin-bottom: 50px;
-    border-left: solid #77dd00 3px;
-    padding-left:30px;
+    margin-bottom: 70px;
 }
 
 .post h1 a, .post h1 a:visited {
@@ -313,168 +227,4 @@ h1 {
 
 input[type='radio'] {
     margin-top:10px;
-}
-
-@-webkit-keyframes imgFade {
- 0% {
-   opacity:0;
- }
- 16% {
-   opacity:1;
- }
- 33% {
-   opacity:1;
- }
- 50% {
-   opacity:0;
- }
- 100% {
-   opacity:0;
- }
-}
-
-@-moz-keyframes imgFade {
- 0% {
-   opacity:0;
- }
- 16% {
-   opacity:1;
- }
- 33% {
-   opacity:1;
- }
- 50% {
-   opacity:0;
- }
- 100% {
-   opacity:0;
- }
-}
-
-@-o-keyframes imgFade {
- 0% {
-   opacity:0;
- }
- 16% {
-   opacity:1;
- }
- 33% {
-   opacity:1;
- }
- 50% {
-   opacity:0;
- }
- 100% {
-   opacity:0;
- }
-}
-
-@keyframes imgFade {
- 0% {
-   opacity:0;
- }
- 16% {
-   opacity:1;
- }
- 33% {
-   opacity:1;
- }
- 50% {
-   opacity:0;
- }
- 100% {
-   opacity:0;
- }
-}
-
-.crop img {
-  -webkit-animation-name: imgFade;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 12s;
-
-  -moz-animation-name: imgFade;
-  -moz-animation-timing-function: ease-in-out;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-duration: 12s;
-
-  -o-animation-name: imgFade;
-  -o-animation-timing-function: ease-in-out;
-  -o-animation-iteration-count: infinite;
-  -o-animation-duration: 12s;
-
-  animation-name: imgFade;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 12s;
-
-  opacity:0;
-}
-
-.crop img:nth-of-type(1) {
-  -webkit-animation-delay: 0s;
-  -moz-animation-delay: 0s;
-  -o-animation-delay: 0s;
-  animation-delay: 0s;
-}
-.crop img:nth-of-type(2) {
-  -webkit-animation-delay: 4s;
-  -moz-animation-delay: 4s;
-  -o-animation-delay: 4s;
-  animation-delay: 4s;
-}
-.crop img:nth-of-type(3) {
-  -webkit-animation-delay: 8s;
-  -moz-animation-delay: 8s;
-  -o-animation-delay: 8s;
-  animation-delay: 8s;
-}
-
-
-@media screen and (max-width: 950px) {
-    .transBox {
-    font-size: 1.7em;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .transBox {
-    font-size: 1.35em;
-    }
-    #start-looking {
-        top:330px;
-    }
-}
-
-@media screen and (max-width: 540px) {
-    .transBox {
-    font-size: 1em;
-    }
-    #start-looking {
-        top:300px;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .transBox {
-    font-size: .9em;
-    }
-    #start-looking {
-        top:290px;
-    }
-    #news_and_updates {
-        font-size: 1.4em;
-    }
-}
-
-@media screen and (max-width: 460px) {
-    .transBox {
-    font-size: .8em;
-    }
-    #start-looking {
-        top:280px;
-    }
-    .post_list {
-        font-size: .65em;
-    }
 }

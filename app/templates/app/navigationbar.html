@@ -10,11 +10,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>                        
             </button>
-            <h1 id="logoTitle"><a href="{% url 'search' %}" class="headerLink {% if request.path == '/search/' %}active{% endif %}"><img id="logo" src="{% static 'images/sheltrlogo2.png' %}"></a></h1>
+            <h1 id="logoTitle"><a href="{% url 'post_list' %}" class="headerLink {% if request.path == '/blog' %}active{% endif %}"><img id="logo" src="{% static 'images/sheltrlogo2.png' %}"></a></h1>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-collapse collapse" id="navbarCollapse">
             <ul class="nav navbar-right navbar-nav">
+                <li><h1><a href="{% url 'search' %}" class="{% if request.path == '/search/' %}active{% endif %}">Find Resources</a></h1></li> 
                 <li><h1><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About Us</a></h1></li>
                 <li id="endNav"><h1><a href="{% url 'post_list' %}" class="{% if request.path == '/blog' %}active{% endif %}">Blog</a></h1></li>
             </ul>

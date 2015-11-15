@@ -9,7 +9,9 @@
     </head>
     <body> 
         {% block content %}
+
         {% if not query %}
+        <div class="container">
         <div class="light">
         <h1 id="formtitle">Here are the Transitional Housing Providers to search!</h1>
         </br>
@@ -21,9 +23,11 @@
             </div>
         </form>
         </div>
+        </div>
         {% endif %}
 <!--         Displaying the searched providers, the same ones that meet the characteristics requested by the customer., by going through the queryset of providers -->
         {% endblock %}
+
 
 {% block results %}
     {% if query %}

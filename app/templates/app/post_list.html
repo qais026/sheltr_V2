@@ -1,6 +1,37 @@
 {% extends "app/base.html" %}
-
+{% load staticfiles %}
 {% block content %}
+
+	<div class="transBoxWrapper">
+		<div id="tb1" class="transBox">
+			<p class="pictureText"><b> You are unique.</b></p>
+		</div>
+		<div id="tb2" class="transBox">
+			<p class="pictureText"><b>Your needs are unique.</b></p>
+		</div>
+		<div id="tb3" class="transBox">
+			<p class="pictureText"><b>Find resources in Baltimore</b></p>
+		</div>
+		<div id="tb4" class="transBox">
+			<p class="pictureText"><b>meant for <u>you</u>.</b></p>
+		</div>
+	</div>
+
+
+	<div class="crop">
+		<img id="picture_one" src="{% static 'images/picture_one.png' %}">
+		<img id="picture_two" src="{% static 'images/picture_two.png' %}">
+		<img id="picture_three" src="{% static 'images/picture_three.png' %}">
+		<a href="{% url 'search' %}"><div id="start-looking" class="btn-lg btn-success">Start Looking >></div></a>
+	</div>
+	</br>
+	<div class="container">
+	<h1 id="news_and_updates">News & Updates</h1>
+
+
+	<div class="post_list">
+	
+
     {% for post in posts %}
         <div class="post">
             <div class="date">
@@ -10,4 +41,6 @@
             <p>{{ post.text|linebreaks }}</p>
         </div>
     {% endfor %}
+	</div>
+	</div class="container">
 {% endblock content %}
