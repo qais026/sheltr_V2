@@ -108,10 +108,10 @@ h1 {
 }
 
 #start-looking {
-    position: relative;
-    display: block;
-    margin: 0 auto;
+    position: absolute;
     top:350px;
+    left:50%;
+    margin-left:-85px;
     width:170px;
 }
 
@@ -144,15 +144,15 @@ h1 {
     position: relative;
 }
 #tb2 {
-        width:84%;
+    width:84%;
     position: relative;
 }
 #tb3 {
-        width:100%;
+    width:100%;
     position: relative;
 }
 #tb4 {
-        width:60%;
+    width:55%;
     position: relative;
 }
 
@@ -465,16 +465,30 @@ input[type='radio'] {
     #news_and_updates {
         font-size: 1.4em;
     }
+    .crop {
+        margin-bottom: 0px;
+    }
 }
 
 @media screen and (max-width: 460px) {
+    .transBoxWrapper {
+        top:20px;
+        left:10px;
+    }
     .transBox {
-    font-size: .8em;
+    font-size: .65em;
     }
     #start-looking {
-        top:280px;
+        top:180px;
+        font-size: .5em;
+        width:130px;
+        margin-left:-65px;
+        text-align: center;
     }
     .post_list {
         font-size: .65em;
+    }
+    .crop {
+        height:230px;
     }
 }
