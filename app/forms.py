@@ -1,6 +1,9 @@
 from django import forms
 from django.forms.formsets import formset_factory
 from .models import Post, Category
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML
+from crispy_forms.bootstrap import FormActions
 
 class PostForm(forms.ModelForm):
 
@@ -57,5 +60,26 @@ class SearchForm(forms.Form):
 
 	def __init__(self, *args, **kwargs):
 		super(SearchForm, self).__init__(*args, **kwargs)
+		self.helper = FormHelper(form=self)
+		self.helper.layout = Layout(
+            Fieldset(
+                '',
+                'questionAge',
+                'questionGender',
+                'questionVeteranStatus',
+                'questionChildren',
+                'questionNumChildren',
+                'questionAgeChildren',
+                'questionCriminal',
+                'questionSubstanceAbuse',
+                'questionHIV',
+                'questionMentalStatus',
+                'questionDisability',
+            ),
+            FormActions(
+            	Submit('search', 'Search', css_class="button-lg"),
+            	css_class="button-holder",
+        	)
+        )
 	#	self.fields['resourceType'].queryset = Category.objects.all()
 
