@@ -29,15 +29,15 @@ class SearchForm(forms.Form):
 	questionVeteranStatus = forms.ChoiceField(label="Are you a US Military veteran?", 
 		choices=yesno, required=False, widget=forms.RadioSelect)
 
-	questionChildren = forms.ChoiceField(label="Do you any children accompanying you?", 
-		choices=yesno, required=False, widget=forms.RadioSelect)
+	questionChildren = forms.ChoiceField(label="Do you have any children accompanying you?", 
+		choices=yesno, required=True, widget=forms.RadioSelect)
 
 	numChildrenChoices = (('Not Applicable', "Not Applicable"), ('ONE', "One"), ('MORETHANONE', "More than one"))
-	questionNumChildren = forms.ChoiceField(label="If you have children, how many are accompanying you?", 
+	questionNumChildren = forms.ChoiceField(label="How many children are accompanying you?", 
 		choices=numChildrenChoices, required=False)
 
 	ageChildrenChoices = (('Younger16', "16 or younger"), ('Older17', "17 or older"))
-	questionAgeChildren = forms.MultipleChoiceField(label="If you have children, what are the ages of the children?",
+	questionAgeChildren = forms.MultipleChoiceField(label="What are the ages of the children?",
 		choices=ageChildrenChoices, required=False, widget=forms.CheckboxSelectMultiple)
 
 	questionCriminal = forms.ChoiceField(label="Have you been incarcerated?",
@@ -77,7 +77,7 @@ class SearchForm(forms.Form):
                 'questionDisability',
             ),
             FormActions(
-            	Submit('search', 'Search', css_class="button-lg"),
+            	Submit('search', 'Search', css_class="button-lg btn-success"),
             	css_class="button-holder",
         	)
         )
