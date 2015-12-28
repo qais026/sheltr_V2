@@ -43,6 +43,9 @@
             <div class="row">
             <div class="col-md-6 no-padding">
             <div class="results-pane">
+                <div id="results-intro">
+                    We've matched you with <span id="len">{{ length }}</span> providers.
+                </div>
                 {% for x in providers %} 
                 <!-- Provides the name, location, address, website, and phone number, mildly formatted -->
                 <div class="provider-result">

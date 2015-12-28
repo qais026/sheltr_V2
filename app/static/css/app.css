@@ -237,7 +237,12 @@ h1 {
 }
 
 #results-intro {
-    font-size:.7em;
+    margin-left: 5px;
+    font-size:.8em;
+}
+
+#results-intro #len {
+    color: #00cc00;
 }
 
 .results-pane {
@@ -250,15 +255,12 @@ h1 {
 
 .provider-result {
     list-style-type: none;
-    border-left: solid #77dd00 5px;
+    border-left: solid #77dd00 4px;
     padding:10px;
     margin-left:20px;
     margin-right: 10px;
     margin-top:5px;
     margin-bottom:20px;
-}
-
-.provider-result {
     background-color: #f5ffff;
 }
 
