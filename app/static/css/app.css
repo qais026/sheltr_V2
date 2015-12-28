@@ -241,32 +241,41 @@ h1 {
 }
 
 .results-pane {
-    border-top: solid 1px;
-    border-bottom: solid 1px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     overflow-x: hidden;
     overflow-y: scroll;
-    max-height: 75vh;
+    max-height: 93%;
 }
 
 .provider-result {
     list-style-type: none;
     border-left: solid #77dd00 5px;
-    border-radius: 10px;
-    padding:20px;
-    margin-left:10px;
+    padding:10px;
+    margin-left:20px;
+    margin-right: 10px;
     margin-top:5px;
-    margin-bottom:50px;
+    margin-bottom:20px;
 }
 
-.provider-result:hover {
-    background: -webkit-linear-gradient(left, #E5FFE5 , white); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #E5FFE5, white); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #E5FFE5, white); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #E5FFE5, white); /* Standard syntax */
+.provider-result {
+    background-color: #f5ffff;
 }
 
 .provider-name {
-    color: #338899;
+    color: #2196F3;
+    font-size: 0.8em;
+}
+
+.provider-details {
+    list-style: none;
+    margin-top: 10px;
+    margin-left: -10px;
+    font-size: 0.75em;
+}
+
+.provider-details > li {
+    margin-bottom: 5px;
 }
 
 .no-padding {
@@ -274,8 +283,7 @@ h1 {
 }
 
 .map {
-    border: 1px solid;
-    height:75vh;
+    height:93%;
 }
 
 .content {

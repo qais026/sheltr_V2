@@ -46,11 +46,14 @@
                 {% for x in providers %} 
                 <!-- Provides the name, location, address, website, and phone number, mildly formatted -->
                 <div class="provider-result">
-                    <li class="provider-name"><b>{{x.provider_name}}</b></li>
-                        <ul>Location: <i>{{ x.location_name}}</i></ul>
-                        <ul>Address: <i>{{ x.address1}}</i></ul>
-                        <ul>{{ x.website}}</ul>
-                        <ul>Phone: <i>{{ x.phone}}</i></ul>
+                    <b class="provider-name">{{x.provider_name}}</b>
+                    <ul class="provider-details">
+                        <li><span aria-label="Address" class="glyphicon glyphicon-search"></span>
+                            {{ x.address1 }}
+                            {{ x.address2 }} {{x.city}}, {{x.state}}, USA</li>
+                        <li><span aria-label="Website" class="glyphicon glyphicon-globe"></span> {{ x.website}}</li>
+                        <li><span aria-label="Phone" class="glyphicon glyphicon-earphone"></span> <i>{{x.phone}}</i></li>
+                    </ul>
                 </div>
                 {% endfor %}
             {% else %}
