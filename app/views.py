@@ -4,6 +4,7 @@ from .models import Post, Category, Provider
 from .forms import PostForm, SearchForm
 from django.shortcuts import redirect
 from django.db.models import Q
+from django.core import serializers
 
 # Create your views here.
 def home(request):
@@ -140,10 +141,14 @@ def search(request):
         form = SearchForm() 
     form = SearchForm
 
+    
+    providers_json = serializers.serialize("json", sqs, fields=('provider_name', 'latlng'))
+
     context_dict = {'categories': category_list,
         'form': form,
         'providers': sqs,
-        'query': query}
+        'query': query,
+        'providers_json': providers_json,}
     return render(request, 'app/search.html', context_dict)
 
 def results(request):

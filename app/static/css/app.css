@@ -455,6 +455,11 @@ input[type='radio'] {
 }
 
 
+.leaflet-container {  /* all maps */
+    width:  100%;
+    height: 100%;
+}
+
 @media screen and (max-width: 950px) {
     .transBox {
     font-size: 1.7em;

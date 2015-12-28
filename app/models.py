@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.template.defaultfilters import slugify
+from .helpers import get_lat_lng
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
@@ -48,5 +49,18 @@ class Provider(models.Model):
     hours = models.CharField(max_length=128, blank=True)
     notes = models.CharField(max_length=256, blank=True)
     category = models.ManyToManyField(Category, blank=True)
+    latlng = models.CharField(max_length=100, blank=True)
+
     def __str__(self):
         return self.provider_name
+
+    ## Geocode using full address
+    def _get_full_address(self):
+        return u'%s %s %s %s %s %s' % (self.address_1, self.address_2, self.city, self.state, self.country, self.zipcode)
+    full_address = property(_get_full_address)
+
+    def save(self, *args, **kwargs):
+        if not self.latlng:
+            location = '+'.join(filter(None, (self.address1, self.address2, self.city, self.state, "USA")))
+            self.latlng = get_lat_lng(location)
+        super(Provider, self).save(*args, **kwargs)

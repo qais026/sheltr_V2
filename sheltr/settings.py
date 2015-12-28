@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'leaflet',
     'app',
 )
 
@@ -108,3 +109,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 PHC_TH_DATA_FILE_PATH = os.path.join(BASE_DIR, 'test.xlsx') #TODO: Give file path here
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': (39.2833, -76.6167),
+    'DEFAULT_ZOOM': 13,
+    'RESET_VIEW': False,
+}

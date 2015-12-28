@@ -1,13 +1,18 @@
 {% extends "app/base.html" %}
 {% load staticfiles %}
 {% load crispy_forms_tags %}
-
+{% load leaflet_tags %}
 
 <!DOCTYPE html>
 <html>
     <head>
         {% block scripts %}
         <script type="text/javascript" src="{% static 'js/form.js' %}" defer></script>
+        <script>
+            var providers = "{{ providers_json|escapejs }}";
+        </script>
+        {% leaflet_js %}
+        {% leaflet_css %}
         {% endblock %}
         {% block title %} Search {% endblock %}
     </head>
@@ -36,10 +41,6 @@
         {% if providers %}
         <div class="container-fluid">
             <div class="row">
-            <p id="results-intro">
-                Check out these providers when you get a chance:
-                If no address is provided, the location may have multiple locations. Please try the phone number first.
-            </p>
             <div class="col-md-6 no-padding">
             <div class="results-pane">
                 {% for x in providers %} 
@@ -59,6 +60,7 @@
             </div>
             <div class="col-md-6 no-padding">
                 <div class="map">
+                    {% leaflet_map "provider_map" %}
                 </div>
             </div>
             </div>
