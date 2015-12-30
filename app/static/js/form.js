@@ -10,7 +10,6 @@ $(function () {
 	$('#warning').hide();
 	$(".form-group:eq("+questionIndex+")").show();
 
-
 	$('.next-btn').on('click', function(e) {
 		e.preventDefault();
 		var $this = $(this);
