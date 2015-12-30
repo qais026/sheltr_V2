@@ -63,9 +63,6 @@ h1 {
 
 .nav-container {
     border:0px;
-    -webkit-box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
-    -moz-box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
-    box-shadow: 2px 0px 13px 5px rgba(0,0,0,0.45);
 }
 
 #endNav {
@@ -321,16 +318,6 @@ h1 {
 
 .post h1 a, .post h1 a:visited {
     color: #000000;
-}
-
-.light {
-    background-color: #E3F2FD;
-    padding:20px;
-    border:1px solid;
-    border-color:#328bd9;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .active{
