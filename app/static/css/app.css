@@ -262,6 +262,7 @@ h1 {
     margin-top:5px;
     margin-bottom:20px;
     background-color: #f5ffff;
+    word-wrap: break-word;
 }
 
 .provider-name {
