@@ -505,7 +505,7 @@ input[type='radio'] {
     font-size: .65em;
     }
     #start-looking {
-        top:180px;
+        top:150px;
         font-size: .5em;
         width:130px;
         margin-left:-65px;
@@ -515,6 +515,6 @@ input[type='radio'] {
         font-size: .65em;
     }
     .crop {
-        height:230px;
+        height:200px;
     }
 }
