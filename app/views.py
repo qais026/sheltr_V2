@@ -7,7 +7,7 @@ from django.db.models import Q
 from django.core import serializers
 from django.contrib.gis.geos import *
 from django.contrib.gis.measure import D
-from django.contrib.gis.db.models.functions import Distance
+
 # Create your views here.
 def home(request):
     return render(request, 'app/home.html', {})
