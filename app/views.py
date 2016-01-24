@@ -148,7 +148,7 @@ def search(request):
     ref_loc = Point(50, 50)
     distance = 2000;
 
-    sqs = Provider.objects.filter(location__distance_lte=(ref_loc, D(m=distance))).distance(ref_loc).order_by('distance')
+    sqs = sqs.filter(location__distance_lte=(ref_loc, D(m=distance))).distance(ref_loc).order_by('distance_test')
 
     context_dict = {'categories': category_list,
         'form': form,
