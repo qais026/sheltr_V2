@@ -5,8 +5,8 @@ from .forms import PostForm, SearchForm
 from django.shortcuts import redirect
 from django.db.models import Q
 from django.core import serializers
-#from django.contrib.gis.geos import *
-#from django.contrib.gis.measure import D
+from django.contrib.gis.geos import *
+from django.contrib.gis.measure import D
 
 # Create your views here.
 def home(request):
