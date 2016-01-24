@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'crispy_forms',
-    'leaflet',
+    'leaflet_test',
     'app',
 )
 
