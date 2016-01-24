@@ -154,7 +154,7 @@ def search(request):
     context_dict = {'categories': category_list,
         'form': form,
         'length': sqs.count(),
-        'providers': sqs,
+        'providers': geosqs,
         'query': query,
         'providers_json': providers_json,}
     return render(request, 'app/search.html', context_dict)
