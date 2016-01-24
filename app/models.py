@@ -3,8 +3,7 @@ from django.utils import timezone
 from django.contrib.gis.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.gis.geos import GEOSGeometry
-from .helpers import get_lat_lng
-from .helpers import get_lng_lat
+from .helpers import *
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
@@ -69,8 +68,15 @@ class Provider(models.Model):
 
     def save(self, *args, **kwargs):
         location = '+'.join(filter(None, (self.address1, self.address2, self.city, self.state, "USA")))
+        lng = get_lng(location)
+        lat = get_lat(location)
         print(get_lng_lat(location))
-        self.location = GEOSGeometry('\'POINT(' + get_lng_lat(location) + ')\'', srid=3857)
+        inputloc = 'POINT('
+        inputloc += lng
+        inputloc += ' '
+        inputloc += lat
+        inputloc += ')'
+        self.location = GEOSGeometry(inputloc, srid=3857)
 
         if not self.latlng:
             self.latlng = get_lat_lng(location)
