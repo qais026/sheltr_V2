@@ -53,6 +53,7 @@ class Provider(models.Model):
     latlng = models.CharField(max_length=100, blank=True)
     #location = models.PointField()
     location = models.PointField(null=False, blank=False, srid=4326, verbose_name="Location")
+    objects = models.GeoManager()
 
 
     def __str__(self):
