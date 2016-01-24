@@ -7,7 +7,7 @@ from django.db.models import Q
 from django.core import serializers
 from django.contrib.gis.geos import *
 from django.contrib.gis.measure import D
-
+from django.contrib.gis.db.models.functions import Distance
 # Create your views here.
 def home(request):
     return render(request, 'app/home.html', {})
@@ -148,7 +148,7 @@ def search(request):
     ref_loc = Point(50, 50)
     distance = 2000;
 
-    sqs = sqs.filter(location__distance_lte=(ref_loc, D(m=distance))).distance_test(ref_loc).order_by('distance')
+    sqs = models.Provider.gis.filter(location__distance_lte=(ref_loc, D(m=distance))).distance(ref_loc).order_by('distance')
 
     context_dict = {'categories': category_list,
         'form': form,
