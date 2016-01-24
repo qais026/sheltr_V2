@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.gis.db import models
 from django.template.defaultfilters import slugify
-from django.contrib.gis.geos import GEOSGeometry
+from django.contrib.gis.geos import *
 from .helpers import *
 
 class Post(models.Model):
@@ -71,12 +71,13 @@ class Provider(models.Model):
         lng = get_lng(location)
         lat = get_lat(location)
         print(get_lng_lat(location))
-        inputloc = 'POINT('
-        inputloc += lng
-        inputloc += ' '
-        inputloc += lat
-        inputloc += ')'
-        self.location = GEOSGeometry(inputloc, srid=3857)
+        # inputloc = 'POINT('
+        # inputloc += lng
+        # inputloc += ' '
+        # inputloc += lat
+        # inputloc += ')'
+        # self.location = GEOSGeometry(inputloc, srid=3857)
+        self.location = Point(lat, lng, srid=3857)
 
         if not self.latlng:
             self.latlng = get_lat_lng(location)
