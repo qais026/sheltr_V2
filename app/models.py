@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.gis.db import models
 from django.template.defaultfilters import slugify
 from .helpers import get_lat_lng
 
@@ -50,6 +51,9 @@ class Provider(models.Model):
     notes = models.CharField(max_length=256, blank=True)
     category = models.ManyToManyField(Category, blank=True)
     latlng = models.CharField(max_length=100, blank=True)
+    location = models.PointField() #install geos
+    #location = models.PointField(null=False, blank=False, srid=4326, verbose_name="Location")
+
 
     def __str__(self):
         return self.provider_name

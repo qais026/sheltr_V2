@@ -5,6 +5,8 @@ from .forms import PostForm, SearchForm
 from django.shortcuts import redirect
 from django.db.models import Q
 from django.core import serializers
+#from django.contrib.gis.geos import *
+#from django.contrib.gis.measure import D
 
 # Create your views here.
 def home(request):
@@ -141,8 +143,12 @@ def search(request):
         form = SearchForm() 
     form = SearchForm
 
-    
     providers_json = serializers.serialize("json", sqs, fields=('provider_name', 'latlng'))
+
+    #ref_loc = Point(50, 50)
+    #distance = 2000;
+
+    #sqs = sqs.filter(location__distance_lte=(ref_loc, D(m=distance))).distance(ref_loc).order_by('distance')
 
     context_dict = {'categories': category_list,
         'form': form,

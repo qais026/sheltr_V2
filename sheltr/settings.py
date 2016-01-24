@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     'crispy_forms',
     'leaflet',
     'app',
@@ -115,3 +116,5 @@ LEAFLET_CONFIG = {
     'DEFAULT_ZOOM': 13,
     'RESET_VIEW': False,
 }
+
+GEOS_LIBRARY_PATH = '/usr/local/lib/libgeos_c.so'

@@ -4,7 +4,6 @@ $(function () {
 	var numQuestions = $(".form-group").size();
 
 	provider_objects = $.parseJSON(providers);
-	$('#test').text(provider_objects[0].fields.latlng);
 	$('.form-group').hide();
 	$('.button-holder').hide();
 	$('#warning').hide();
