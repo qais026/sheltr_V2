@@ -143,14 +143,14 @@ def search(request):
         form = SearchForm() 
     form = SearchForm
 
-    providers_json = serializers.serialize("json", sqs, fields=('provider_name', 'latlng'))
 
 
     ref_loc = Point(30, 50, srid=3857)
     distance = 2000
 
     geosqs = Provider.gis.filter(location__distance_lte=(ref_loc, D(m=distance))).distance(ref_loc).order_by('distance')
-
+    providers_json = serializers.serialize("json", geosqs, fields=('provider_name', 'latlng'))
+    
     context_dict = {'categories': category_list,
         'form': form,
         'length': sqs.count(),
