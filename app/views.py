@@ -148,7 +148,7 @@ def search(request):
     ref_loc = Point(39.299503, -76.607456, srid=3857)
     distance = 10000
 
-    geosqs = Provider.gis.filter(location__distance_lte=(ref_loc, D(m=distance))).distance(ref_loc).order_by('distance')
+    geosqs = Provider.gis.all().distance(ref_loc).order_by('distance')
     providers_json = serializers.serialize("json", geosqs, fields=('provider_name', 'latlng'))
 
 
