@@ -146,7 +146,7 @@ def search(request):
     providers_json = serializers.serialize("json", sqs, fields=('provider_name', 'latlng'))
 
 
-    ref_loc = GEOSGeometry('POINT(5 23)', srid=4326)
+    ref_loc = Point(30, 50, srid=4326)
     distance = 2000
 
     sqs = Provider.objects.filter(location__distance_lte=(ref_loc, D(m=distance))).distance(ref_loc).order_by('distance')
