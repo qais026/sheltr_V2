@@ -73,7 +73,7 @@ class Provider(models.Model):
         print(get_lng_lat(location))
         inputloc = 'POINT('
         inputloc += lng
-        inputloc += '- '
+        inputloc += ' '
         inputloc += lat
         inputloc += ')'
         self.location = GEOSGeometry(inputloc, srid=3857)
