@@ -76,7 +76,7 @@ class Provider(models.Model):
         inputloc += ' '
         inputloc += lat
         inputloc += ')'
-        self.location = GEOSGeometry(inputloc, srid=3857)
+        self.location = GEOSGeometry(inputloc)
 
         if not self.latlng:
             self.latlng = get_lat_lng(location)
