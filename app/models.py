@@ -78,7 +78,7 @@ class Provider(models.Model):
         # inputloc += lat
         # inputloc += ')'
         # print(inputloc)
-        #self.location = GEOSGeometry(inputloc, srid=3857)
+        self.location = GEOSGeometry('POINT(30 50)', srid=3857)
 
         if not self.latlng:
             location = '+'.join(filter(None, (self.address1, self.address2, self.city, self.state, "USA")))
