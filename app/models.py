@@ -83,4 +83,4 @@ class Provider(models.Model):
         if not self.latlng:
             location = '+'.join(filter(None, (self.address1, self.address2, self.city, self.state, "USA")))
             self.latlng = get_lat_lng(location)
-        super(Provider, self).save(*args, **kwargs)
+        #super(Provider, self).save(*args, **kwargs)
