@@ -53,7 +53,7 @@ class Provider(models.Model):
     category = models.ManyToManyField(Category, blank=True)
     latlng = models.CharField(max_length=100, blank=True)
     #location = models.PointField()
-    location = models.PointField(null=False, blank=False, verbose_name="Location")
+    location = models.PointField(null=False, blank=False, srid=3857, verbose_name="Location")
     objects = models.Manager()
     gis = models.GeoManager()
 
