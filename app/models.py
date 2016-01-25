@@ -67,10 +67,11 @@ class Provider(models.Model):
     full_address = property(_get_full_address)
 
     def save(self, *args, **kwargs):
+        loc = '+'.join(filter(None, (self.address1, self.address2, self.city, self.state, "USA")))
         print("Saving: " + self.provider_name)
-        lng = get_lng(location)
+        lng = get_lng(loc)
         print(lng)
-        lat = get_lat(location)
+        lat = get_lat(loc)
         print(lat)
         inputloc = 'POINT('
         inputloc += lng
