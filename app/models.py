@@ -86,4 +86,4 @@ class Provider(models.Model):
         inputloc += lat
         inputloc += ')'
         print(inputloc)
-        self.location = GEOSGeometry(inputloc, srid=3857)
+        self.location = GEOSGeometry(inputloc)
