@@ -67,15 +67,18 @@ class Provider(models.Model):
     full_address = property(_get_full_address)
 
     def save(self, *args, **kwargs):
+        print(self.provider_name)
         location = '+'.join(filter(None, (self.address1, self.address2, self.city, self.state, "USA")))
         lng = get_lng(location)
+        print(lng)
         lat = get_lat(location)
-        print(get_lng_lat(location))
+        print(lat)
         inputloc = 'POINT('
         inputloc += lng
         inputloc += ' '
         inputloc += lat
         inputloc += ')'
+        print(inputLoc)
         self.location = GEOSGeometry(inputloc, srid=3857)
 
         #if not self.latlng:
