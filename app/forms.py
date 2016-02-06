@@ -2,7 +2,7 @@ from django import forms
 from django.forms.formsets import formset_factory
 from .models import Post, Category
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, Div
 from crispy_forms.bootstrap import FormActions
 
 class PostForm(forms.ModelForm):
