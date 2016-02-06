@@ -146,7 +146,6 @@ def search(request):
             if form.cleaned_data['questionLocation']:
                 inputLoc = form.cleaned_data['questionLocation']
 
-
     else:
         form = SearchForm() 
     form = SearchForm
