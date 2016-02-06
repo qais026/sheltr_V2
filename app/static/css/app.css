@@ -233,20 +233,10 @@ h1 {
     text-decoration: underline;
 }
 
-
-
-
-
-
 #id_questionLocation {
     text-align: center;
+    width: 80%;
 }
-
-
-
-
-
-
 
 #results-intro {
     margin-left: 5px;
@@ -531,5 +521,11 @@ input[type='radio'] {
     }
     .crop {
         height:200px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #id_questionLocation {
+      width: 300px;
     }
 }
