@@ -145,8 +145,9 @@ def search(request):
             if form.cleaned_data['questionLocation']:
                 inputLoc = form.cleaned_data['questionLocation']
                 ref_loc_lat = get_lat(inputLoc)
+                print(ref_loc_lat)
                 ref_loc_lng = get_lng(inputLoc)
-                console.log("yay")
+                print(ref_loc_lng)
 
     else:
         form = SearchForm() 
