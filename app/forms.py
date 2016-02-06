@@ -55,6 +55,8 @@ class SearchForm(forms.Form):
 	questionDisability = forms.ChoiceField(label="Do you have a physical disability?",
 		choices=yesno, required=False, widget=forms.RadioSelect)
 
+	questionLocation = forms.CharField(label="Location", required=False)
+
 	# questionWheelChair = forms.ChoiceField(label="If you a physical disability, do you have a wheelchair?",
 	# 	choices=yesnona, required=False)	
 
@@ -75,6 +77,7 @@ class SearchForm(forms.Form):
                 'questionHIV',
                 'questionMentalStatus',
                 'questionDisability',
+                'questionLocation',
             ),
             FormActions(
             	Submit('search', 'Search', css_class="button-lg btn-success"),

@@ -144,7 +144,7 @@ def search(request):
     form = SearchForm
 
     ref_loc = GEOSGeometry('POINT(-76.620588 39.378106)', srid=4326)
-    distance = 10000
+    #distance = 10000
     geosqs = Provider.gis.all().distance(ref_loc).order_by('distance')
     providers_json = serializers.serialize("json", geosqs, fields=('provider_name', 'latlng'))
 
