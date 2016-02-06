@@ -7,6 +7,7 @@ from django.db.models import Q
 from django.core import serializers
 from django.contrib.gis.geos import *
 from django.contrib.gis.measure import D
+from .helpers import *
 
 # Create your views here.
 def home(request):
@@ -139,6 +140,14 @@ def search(request):
                 sqs = sqs.exclude(Q(category__name='_') & ~Q(category__name='disability'))
             elif form.cleaned_data['questionDisability'] == "NO":
                 sqs = sqs.exclude(Q(category__name='_') & Q(category__name='disability'))  
+
+            """ LOCATION """
+            if form.cleaned_data['questionLocation']:
+                inputLoc = form.cleaned_data['questionLocation']
+                ref_loc_lat = get_lat(inputLoc)
+                ref_loc_lng = get_lng(inputLoc)
+                console.log("yay")
+
     else:
         form = SearchForm() 
     form = SearchForm
