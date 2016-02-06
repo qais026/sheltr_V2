@@ -53,6 +53,7 @@ def search(request):
     query = False
     sqs = Provider.objects.all()
     category_list = Category.objects.all()
+    inputLoc = None
     if request.method == "GET":
         if ('csrfmiddlewaretoken' in request.GET):
             query = True
