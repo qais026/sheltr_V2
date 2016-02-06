@@ -236,6 +236,7 @@ h1 {
 #id_questionLocation {
     text-align: center;
     width: 80%;
+    margin: auto;
 }
 
 #results-intro {
