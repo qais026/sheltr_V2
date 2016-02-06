@@ -144,13 +144,14 @@ def search(request):
             """ LOCATION """
             if form.cleaned_data['questionLocation']:
                 inputLoc = form.cleaned_data['questionLocation']
-                ref_loc_lat = get_lat(inputLoc)
-                ref_loc_lng = get_lng(inputLoc)
+
 
     else:
         form = SearchForm() 
     form = SearchForm
 
+    ref_loc_lat = get_lat(inputLoc)
+    ref_loc_lng = get_lng(inputLoc)
     ref_loc = GEOSGeometry('POINT(' + ref_loc_lng + ' ' + ref_loc_lat +')', srid=4326)
     #distance = 10000
     geosqs = Provider.gis.all().distance(ref_loc).order_by('distance')
