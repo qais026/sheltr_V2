@@ -77,7 +77,7 @@ class SearchForm(forms.Form):
                 'questionHIV',
                 'questionMentalStatus',
                 'questionDisability',
-                Div('questionLocation', style="text-align: center")
+                'questionLocation'
             ),
             FormActions(
             	Submit('search', 'Search', css_class="button-lg btn-success"),
