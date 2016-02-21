@@ -292,6 +292,7 @@ h1 {
 .provider-details-popup {
     padding-left: 15px;
     font-size: 1.5em;
+    word-wrap: break-word;
 }
 
 .no-padding {
