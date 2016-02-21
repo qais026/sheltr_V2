@@ -39,6 +39,7 @@ def get_lat(location):
     location = urllib.parse.quote_plus(smart_str(location))
     url = 'http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false' % location
     response = urllib.request.urlopen(url).read() 
+    print(response.status_code)
     result = json.loads(response.decode("utf-8"))
     if result['status'] == 'OK':
        return str(result['results'][0]['geometry']['location']['lat'])
@@ -51,6 +52,7 @@ def get_lng(location):
     url = 'http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false' % location
     #response = urllib.request.urlopen(url).read() 
     response = requests.get(url)
+    print(response.status_code)
     result = response.json()
 
     #result = json.loads(response.decode("utf-8"))
