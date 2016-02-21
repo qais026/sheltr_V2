@@ -66,7 +66,7 @@ $(function () {
 	        lat = parseFloat(s[0]); 
 	        lng = parseFloat(s[1]);
 	        var content = 
-	        '<div>test</div>';
+	        '<div class="provider-name">test</div>';
 	        // var content =
 	       	//     '<div class="provider-result">
 	        //         <b class="provider-name">' + current_provider.provider_name + '</b>
