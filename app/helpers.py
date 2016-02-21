@@ -17,7 +17,6 @@ def get_lat_lng(location):
        lat = str(result['results'][0]['geometry']['location']['lat'])
        lng = str(result['results'][0]['geometry']['location']['lng'])
        return {'lat': lat, 'lng': lng}
-       #return '%s,%s' % (lat, lng)
     else:
         return ''
 
@@ -40,10 +39,8 @@ def get_lng_lat(location):
 def get_lat(location):
     location = urllib.parse.quote_plus(smart_str(location))
     url = 'http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false' % location
-    #response = urllib.request.urlopen(url).read() 
     response = requests.get(url)
     print(response.status_code)
-    #result = json.loads(response.decode("utf-8"))
     result = response.json()
 
     if result['status'] == 'OK':
@@ -55,12 +52,10 @@ def get_lat(location):
 def get_lng(location):
     location = urllib.parse.quote_plus(smart_str(location))
     url = 'http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false' % location
-    #response = urllib.request.urlopen(url).read() 
     response = requests.get(url)
     print(response.status_code)
     result = response.json()
 
-    #result = json.loads(response.decode("utf-8"))
     if result['status'] == 'OK':
        return str(result['results'][0]['geometry']['location']['lng'])
     else:

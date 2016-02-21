@@ -81,7 +81,6 @@ class Provider(models.Model):
         self.location = GEOSGeometry(inputloc, srid=4326)
 
         print("Saving " + self.provider_name + ": " + " Loc: " + loc + " Lng: " + lng + " Lat: " + lat + " Point: " + inputloc)
-        print("----------")
 
         _lat_lng = '%s,%s' % (lat_lng['lat'], lat_lng['lng'])
         self.latlng = _lat_lng
