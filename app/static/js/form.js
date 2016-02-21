@@ -66,9 +66,10 @@ $(function () {
 	        lat = parseFloat(s[0]); 
 	        lng = parseFloat(s[1]);
 	        var content = 
-	        '<div class="provider-name">'+current_provider.provider_name+'</div>'+
+	        '<b class="provider-name">'+current_provider.provider_name+'</b>'+
 	        '<ul class="provider-details">'+
-	        	'<li><span aria-label="Address" class="glyphicon glyphicon-search"></span>';
+	        	'<li><span aria-label="Address" class="glyphicon glyphicon-search"></span>'+
+	        		current_provider.address1 + " " + current_provider.address2 + " " + current_provider.city + " " + current_provider.state + ", USA</li>";
 	        // var content =
 	       	//     '<div class="provider-result">
 	        //         <b class="provider-name">' + current_provider.provider_name + '</b>
