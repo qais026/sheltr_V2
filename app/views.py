@@ -154,7 +154,7 @@ def search(request):
     ref_loc_lng = get_lng(inputLoc)
     ref_loc = GEOSGeometry('POINT(' + ref_loc_lng + ' ' + ref_loc_lat +')', srid=4326)
     #distance = 10000
-    geosqs = Provider.gis.all().distance(ref_loc).order_by('distance')
+    geosqs = sqs.distance(ref_loc).order_by('distance')
     providers_json = serializers.serialize("json", geosqs, fields=('provider_name', 'address1', 'address2', 'city', 'state', 'website', 'phone', 'zipcode', 'latlng'))
 
     context_dict = {'categories': category_list,
