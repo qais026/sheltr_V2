@@ -15,7 +15,7 @@ providers = Provider.objects.all()
 print("Resaving all providers...")
 
 for provider in providers: 
-	time.sleep(0.3)
+	time.sleep(0.2)
 	provider.save()
 
 

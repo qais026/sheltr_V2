@@ -68,10 +68,9 @@ class Provider(models.Model):
 
     def save(self, *args, **kwargs):
         loc = '+'.join(filter(None, (self.address1, self.address2, self.city, self.state, "USA")))
-        
-        lng = get_lng(loc)
-
-        lat = get_lat(loc)
+        lat_lng = get_lat_lng(loc)
+        lng = get_lng(lat_lng['lng'])
+        lat = get_lat(lat_lng['lat'])
 
         inputloc = 'POINT('
         inputloc += lng
@@ -84,8 +83,8 @@ class Provider(models.Model):
         print("Saving " + self.provider_name + ": " + " Loc: " + loc + " Lng: " + lng + " Lat: " + lat + " Point: " + inputloc)
         print("----------")
 
-        location = '+'.join(filter(None, (self.address1, self.address2, self.city, self.state, "USA")))
-        self.latlng = get_lat_lng(location)
+        _lat_lng = '%s,%s' % (lat_lng['lat'], lat_lng['lng'])
+        self.latlng = _lat_lng
         super(Provider, self).save(*args, **kwargs)
 
       

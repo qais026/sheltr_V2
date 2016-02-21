@@ -16,7 +16,8 @@ def get_lat_lng(location):
     if result['status'] == 'OK':
        lat = str(result['results'][0]['geometry']['location']['lat'])
        lng = str(result['results'][0]['geometry']['location']['lng'])
-       return '%s,%s' % (lat, lng)
+       return {'lat': lat, 'lng': lng}
+       #return '%s,%s' % (lat, lng)
     else:
         return ''
 
@@ -31,6 +32,7 @@ def get_lng_lat(location):
     if result['status'] == 'OK':
        lat = str(result['results'][0]['geometry']['location']['lat'])
        lng = str(result['results'][0]['geometry']['location']['lng'])
+
        return '%s,%s' % (lng, lat)
     else:
         return ''
