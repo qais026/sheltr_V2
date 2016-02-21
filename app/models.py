@@ -69,8 +69,8 @@ class Provider(models.Model):
     def save(self, *args, **kwargs):
         loc = '+'.join(filter(None, (self.address1, self.address2, self.city, self.state, "USA")))
         lat_lng = get_lat_lng(loc)
-        lng = get_lng(lat_lng['lng'])
-        lat = get_lat(lat_lng['lat'])
+        lng = lat_lng['lng']
+        lat = lat_lng['lat']
 
         inputloc = 'POINT('
         inputloc += lng
