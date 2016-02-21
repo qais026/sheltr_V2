@@ -67,7 +67,7 @@ $(function () {
 	        lng = parseFloat(s[1]);
 	        var content =  
 	       	    '<div class="provider-result">
-	                <b class="provider-name">{{x.provider_name}}</b>
+	                <b class="provider-name">' + current_provider.provider_name + '</b>
 	                <ul class="provider-details">
 	                    <li><span aria-label="Address" class="glyphicon glyphicon-search"></span>' +
 	                        current_provider.address1 + " "
