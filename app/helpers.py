@@ -39,15 +39,19 @@ def get_lat(location):
     url = 'http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false' % location
     response = urllib.request.urlopen(url).read() 
     result = json.loads(response.decode("utf-8"))
-
-    return str(result['results'][0]['geometry']['location']['lat'])
-
+    if result['status'] == 'OK':
+       return str(result['results'][0]['geometry']['location']['lat'])
+    else:
+       print("Error loading json")
+       return '0'
 
 def get_lng(location):
     location = urllib.parse.quote_plus(smart_str(location))
     url = 'http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false' % location
     response = urllib.request.urlopen(url).read() 
     result = json.loads(response.decode("utf-8"))
-
-    return str(result['results'][0]['geometry']['location']['lng'])
-
+    if result['status'] == 'OK':
+       return str(result['results'][0]['geometry']['location']['lng'])
+    else:
+       print("Error loading json")
+       return '0'
