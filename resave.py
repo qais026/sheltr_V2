@@ -1,6 +1,8 @@
 #script to resave providers to set the latlng property of each provider.
 
 import os
+import time
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sheltr.settings')
 
 import django
@@ -13,6 +15,7 @@ providers = Provider.objects.all()
 print("Resaving all providers...")
 
 for provider in providers: 
+	time.sleep(0.2)
 	provider.save()
 
 
