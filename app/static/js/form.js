@@ -68,8 +68,11 @@ $(function () {
 	        var content = 
 	        '<b class="provider-name">'+current_provider.provider_name+'</b>'+
 	        '<ul class="provider-details">'+
-	        	'<li><span aria-label="Address" class="glyphicon glyphicon-search"></span>'+
-	        		current_provider.address1 + " " + current_provider.address2 + " " + current_provider.city + " " + current_provider.state + ", USA</li>";
+	        	'<li><span aria-label="Address" class="glyphicon glyphicon-search"></span>'+ " " + 
+	        		current_provider.address1 + " " + current_provider.address2 + " " + current_provider.city + " " + current_provider.state + ", USA</li>" +
+	        	'<li><span aria-label="Website" class="glyphicon glyphicon-globe"></span>'+" "+current_provider.website+"</li>"+
+	        	'<li><span aria-label="Phone" class="glyphicon glyphicon-earphone"></span>'+" "+current_provider.phone+"</li>"+
+	        "</ul>";
 	        // var content =
 	       	//     '<div class="provider-result">
 	        //         <b class="provider-name">' + current_provider.provider_name + '</b>
