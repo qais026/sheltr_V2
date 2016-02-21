@@ -65,17 +65,19 @@ $(function () {
 	        s = current_provider.latlng.split(",");
 	        lat = parseFloat(s[0]); 
 	        lng = parseFloat(s[1]);
-	        var content =  
-	       	    '<div class="provider-result">
-	                <b class="provider-name">' + current_provider.provider_name + '</b>
-	                <ul class="provider-details">
-	                    <li><span aria-label="Address" class="glyphicon glyphicon-search"></span>' +
-	                        current_provider.address1 + " "
-	                        current_provider.address2 + " " current_provider.city + " " current_provider.state + ", USA"'</li>
-	                    <li><span aria-label="Website" class="glyphicon glyphicon-globe"></span>' + current_provider.website + '</li>
-	                    <li><span aria-label="Phone" class="glyphicon glyphicon-earphone"></span> <i>' + current_provider.phone + '</i></li>
-	                </ul>
-	            </div>';
+	        var content = 
+	        '<div>test</div>';
+	        // var content =
+	       	//     '<div class="provider-result">
+	        //         <b class="provider-name">' + current_provider.provider_name + '</b>
+	        //         <ul class="provider-details">
+	        //             <li><span aria-label="Address" class="glyphicon glyphicon-search"></span>' +
+	        //                 current_provider.address1 + " "
+	        //                 current_provider.address2 + " " current_provider.city + " " current_provider.state + ", USA"'</li>
+	        //             <li><span aria-label="Website" class="glyphicon glyphicon-globe"></span>' + current_provider.website + '</li>
+	        //             <li><span aria-label="Phone" class="glyphicon glyphicon-earphone"></span> <i>' + current_provider.phone + '</i></li>
+	        //         </ul>
+	        //     </div>';
 	        L.marker([lat, lng], 
 	        	{title: current_provider.provider_name,
 	        	opacity: 1.0}).addTo(detail.map)
