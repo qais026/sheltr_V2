@@ -51,7 +51,7 @@ def post_edit(request, pk):
 
 def search(request):
     query = False
-    sqs = Provider.objects.all()
+    sqs = Provider.gis.all()
     category_list = Category.objects.all()
     inputLoc = None
     if request.method == "GET":
