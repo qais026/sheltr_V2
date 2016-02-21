@@ -81,9 +81,8 @@ class Provider(models.Model):
         print(inputloc)
         self.location = GEOSGeometry(inputloc, srid=4326)
 
-        if not self.latlng:
-            location = '+'.join(filter(None, (self.address1, self.address2, self.city, self.state, "USA")))
-            self.latlng = get_lat_lng(location)
+        location = '+'.join(filter(None, (self.address1, self.address2, self.city, self.state, "USA")))
+        self.latlng = get_lat_lng(location)
         super(Provider, self).save(*args, **kwargs)
 
       
