@@ -43,11 +43,11 @@ def get_lat(location):
     print(response.status_code)
     #result = json.loads(response.decode("utf-8"))
     result = response.json()
-    
+
     if result['status'] == 'OK':
        return str(result['results'][0]['geometry']['location']['lat'])
     else:
-       print("Error loading json")
+       print("Error loading json"  + result['status'])
        return '0'
 
 def get_lng(location):
@@ -62,5 +62,5 @@ def get_lng(location):
     if result['status'] == 'OK':
        return str(result['results'][0]['geometry']['location']['lng'])
     else:
-       print("Error loading json")
+       print("Error loading json: " + result['status'])
        return '0'
