@@ -15,6 +15,7 @@ providers = Provider.objects.all()
 print("Resaving all providers...")
 
 for provider in providers: 
+	#Slow down because Google Maps API only allows max ~5 queries/sec for location data.
 	time.sleep(0.2)
 	provider.save()
 
