@@ -66,7 +66,7 @@ $(function () {
 	        lat = parseFloat(s[0]); 
 	        lng = parseFloat(s[1]);
 	        var content = 
-	        '<b class="provider-name">'+current_provider.provider_name+'</b>'+
+	        '<b class="provider-name-popup">'+current_provider.provider_name+'</b>'+
 	        '<ul class="provider-details provider-details-popup">'+
 	        	'<li><span aria-label="Address" class="glyphicon glyphicon-search"></span>'+ " " + 
 	        		current_provider.address1 + " " + current_provider.address2 + " " + current_provider.city + " " + current_provider.state + ", USA</li>" +
