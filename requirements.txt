@@ -19,3 +19,4 @@ tablib==0.10.0
 virtualenv==12.0.6
 whitenoise==2.0.2
 zurb-foundation==5.5.1.post1
+django-leaflet==0.18.0
