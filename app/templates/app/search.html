@@ -10,6 +10,8 @@
         <script type="text/javascript" src="{% static 'js/form.js' %}" defer></script>
         <script>
             var providers = "{{ providers_json|escapejs }}";
+            var ref_loc_lat = {{ ref_loc_lat }};
+            var ref_loc_lng = {{ ref_loc_lng }};
         </script>
         {% leaflet_js %}
         {% leaflet_css %}
@@ -50,6 +52,7 @@
                 <!-- Provides the name, location, address, website, and phone number, mildly formatted -->
                 <div class="provider-result">
                     <b class="provider-name">{{x.provider_name}}</b>
+                    <p id="provider-distance"></p>
                     <ul class="provider-details">
                         <li><span aria-label="Address" class="glyphicon glyphicon-search"></span>
                             {{ x.address1 }}

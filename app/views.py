@@ -162,7 +162,9 @@ def search(request):
         'length': geosqs.count(),
         'providers': geosqs,
         'query': query,
-        'providers_json': providers_json,}
+        'providers_json': providers_json,
+        'ref_loc_lat': ref_loc_lat,
+        'ref_loc_lng': ref_loc_lng,}
     return render(request, 'app/search.html', context_dict)
 
 def results(request):

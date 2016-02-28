@@ -53,6 +53,37 @@ $(function () {
 		return true;
 	}
 
+	var provider;
+	var provider_latlng;
+	var provider_lat, provider_lng;
+	var distance;
+	for (var i = 0; i < provider_objects.length; i++) {
+		provider_latlng = provider_object[i].fields.latlng.split(",");
+		provider_lat = parseFloat(provider_latlng[0]);
+		provider_lng = parseFloat(provider_latlng[1]);
+
+		distance = getDistanceFromLatLonInKm(provider_lat, provider_lng, ref_loc_lat, ref_loc_lng);
+
+		$('#provider-distance')[i].text(""+distance)
+	}
+
+	function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+		var R = 6371; // Radius of the earth in km
+		var dLat = deg2rad(lat2-lat1);  // deg2rad below
+		var dLon = deg2rad(lon2-lon1); 
+		var a = 
+	    	Math.sin(dLat/2) * Math.sin(dLat/2) +
+	    	Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+	    	Math.sin(dLon/2) * Math.sin(dLon/2); 
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+		var d = R * c; // Distance in km
+		return d;
+	}
+
+	function deg2rad(deg) {
+  		return deg * (Math.PI/180)
+	}
+
 	window.addEventListener("map:init", function (e) {
 		var lat, lng;
         var detail = e.detail;
