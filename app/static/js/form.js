@@ -58,7 +58,7 @@ $(function () {
 	var provider_lat, provider_lng;
 	var distance;
 	for (var i = 0; i < provider_objects.length; i++) {
-		provider_latlng = provider_object[i].fields.latlng.split(",");
+		provider_latlng = provider_objects[i].fields.latlng.split(",");
 		provider_lat = parseFloat(provider_latlng[0]);
 		provider_lng = parseFloat(provider_latlng[1]);
 
