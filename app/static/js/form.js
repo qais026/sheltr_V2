@@ -64,8 +64,6 @@ $(function () {
 
 		distance = getDistanceFromLatLonInKm(provider_lat, provider_lng, ref_loc_lat, ref_loc_lng);
 
-		var size = $('#provider-distance').size();
-		alert(size);
 		$('#provider-distance')[i].textContent = "test";
 	}
 
