@@ -285,6 +285,10 @@ h1 {
     font-size: 0.75em;
 }
 
+.provider-distance {
+    font-size: 0.6em;
+}
+
 .provider-details > li {
     margin-bottom: 5px;
 }
