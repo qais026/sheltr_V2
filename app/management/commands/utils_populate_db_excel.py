@@ -1,4 +1,6 @@
 import string
+import traceback
+import time
 from openpyxl import load_workbook
 
 from django.conf import settings
@@ -92,6 +94,7 @@ def populate_providers(phc_th_sheet, provider_header, category_header):
                 if remov_non_ascii(cell.value).lower() == 'y':
                     attrs['categories'].append(category_header[cell.column])
         add_provider(attrs)
+        time.sleep(0.1)
 
 
 class Command(NoArgsCommand):
@@ -118,4 +121,5 @@ class Command(NoArgsCommand):
         except Exception as ex:
             print ("Oops Sorry! Something went seriously Wrong. Please contact administrator")
             print ("Reason: %s" % repr(ex))
+            traceback.print_exc()
         
