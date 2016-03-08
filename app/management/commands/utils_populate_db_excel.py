@@ -94,7 +94,7 @@ def populate_providers(phc_th_sheet, provider_header, category_header):
                 if remov_non_ascii(cell.value).lower() == 'y':
                     attrs['categories'].append(category_header[cell.column])
         add_provider(attrs)
-        time.sleep(0.1)
+        time.sleep(0.2)
 
 
 class Command(NoArgsCommand):
