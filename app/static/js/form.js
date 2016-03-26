@@ -116,7 +116,7 @@ $(function () {
         var lat1 = parseFloat(x[0]);
         var lng1 = parseFloat(x[1]);
 
-        var providerLast = provider_objects[provider_objects.length - 1].fields;
+        var providerTen = provider_objects[9].fields;
         var y = providerLast.latlng.split(",");
         var lat2 = parseFloat(y[0]);
         var lng2 = parseFloat(y[1]);
