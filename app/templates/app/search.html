@@ -14,7 +14,9 @@
             var ref_loc_lng = {{ ref_loc_lng }};
         </script>
         {% leaflet_js %}
+        <script src="{% static 'js/leaflet-routing-machine.js' %}"></script>
         {% leaflet_css %}
+        <link rel="stylesheet" href="{% 'css/leaflet-routing-machine.css' %}"/>
         {% endblock %}
         {% block title %} Search {% endblock %}
     </head>
