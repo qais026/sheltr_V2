@@ -109,7 +109,15 @@ $(function () {
 	        	{title: current_provider.provider_name,
 	        	opacity: 1.0}).addTo(detail.map)
 	        .bindPopup(L.popup().setContent(content));
+
+	        L.Routing.control({
+			    waypoints: [
+			        L.latLng(57.74, 11.94),
+			        L.latLng(57.6792, 11.949)
+			    ],
+			    routeWhileDragging: true
+			}).addTo(detail.map);
         }
-	    }, false);
+	}, false);
 });
 
