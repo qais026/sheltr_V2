@@ -111,10 +111,20 @@ $(function () {
 	        .bindPopup(L.popup().setContent(content));
         }
 
+        var providerOne = provider_objects[0].fields;
+        var x = providerOne.latlng.split(",");
+        var lat1 = parseFloat(x[0]);
+        var lng1 = parseFloat(x[1]);
+
+        var providerLast = provider_objects[provider_objects.length - 1].fields;
+        var y = providerLast.latlng.split(",");
+        var lat2 = parseFloat(y[0]);
+        var lng2 = parseFloat(y[1]);
+
     	L.Routing.control({
 		    waypoints: [
-		        L.latLng(57.74, 11.94),
-		        L.latLng(57.6792, 11.949)
+		        L.latLng(lat1, lng1),
+		        L.latLng(lat2, lng2)
 		    ],
 		    routeWhileDragging: true
 		}).addTo(detail.map);
