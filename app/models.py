@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 from django.utils import timezone
 from django.contrib.gis.db import models
@@ -39,7 +41,7 @@ class Category(models.Model):
 class Provider(models.Model):
     #Django automatically creates a primary key for a model
     provider_name = models.CharField(max_length=128)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True, default=uuid.uuid4())
     location_name = models.CharField(max_length=128, null=True, blank=True)
     website = models.CharField(max_length=128, null=True, blank=True)
     address1 = models.CharField(max_length=128, blank=True)
