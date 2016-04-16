@@ -111,23 +111,23 @@ $(function () {
 	        .bindPopup(L.popup().setContent(content));
         }
 
-        var providerOne = provider_objects[0].fields;
-        var x = providerOne.latlng.split(",");
-        var lat1 = parseFloat(x[0]);
-        var lng1 = parseFloat(x[1]);
+  //       var providerOne = provider_objects[0].fields;
+  //       var x = providerOne.latlng.split(",");
+  //       var lat1 = parseFloat(x[0]);
+  //       var lng1 = parseFloat(x[1]);
 
-        var providerTen = provider_objects[9].fields;
-        var y = providerTen.latlng.split(",");
-        var lat2 = parseFloat(y[0]);
-        var lng2 = parseFloat(y[1]);
+  //       var providerTen = provider_objects[9].fields;
+  //       var y = providerTen.latlng.split(",");
+  //       var lat2 = parseFloat(y[0]);
+  //       var lng2 = parseFloat(y[1]);
 
-    	L.Routing.control({
-		    waypoints: [
-		        L.latLng(lat1, lng1),
-		        L.latLng(lat2, lng2)
-		    ],
-		    routeWhileDragging: true
-		}).addTo(detail.map);
+  //   	L.Routing.control({
+		//     waypoints: [
+		//         L.latLng(lat1, lng1),
+		//         L.latLng(lat2, lng2)
+		//     ],
+		//     routeWhileDragging: true
+		// }).addTo(detail.map);
 
 	}, false);
 });

@@ -201,7 +201,16 @@ def category(request, category_name_slug):
     # Go render the response and return it to the client.
     return render(request, 'app/category.html', context_dict)
 
-        # About Us page view
+def provider(request, provider_name_slug):
+    context_dict = {}
+    try:
+        provider = Provider.objects.get(slug=provider_name_slug)
+        context_dict['provider'] = provider
+    except Provider.DoesNotExist:
+        pass
+    return render(request, 'app/provider_detail.html', context_dict)
+
+# About Us page view
 def about(request):
     context_dict = {}
     return render(request, 'app/about.html', context_dict)
