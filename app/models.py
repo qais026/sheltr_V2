@@ -39,7 +39,7 @@ class Category(models.Model):
 class Provider(models.Model):
     #Django automatically creates a primary key for a model
     provider_name = models.CharField(max_length=128)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField()
     location_name = models.CharField(max_length=128, null=True, blank=True)
     website = models.CharField(max_length=128, null=True, blank=True)
     address1 = models.CharField(max_length=128, blank=True)
