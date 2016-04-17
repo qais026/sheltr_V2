@@ -53,7 +53,7 @@
                 {% for x in providers %} 
                 <!-- Provides the name, location, address, website, and phone number, mildly formatted -->
                 <div class="provider-result">
-                    <b class="provider-name">{{x.provider_name}}</b>
+                    <b class="provider-name"><a href="/provider/{{ x.slug }}">{{x.provider_name}}</a></b>
                     <p class="provider-distance"></p>
                     <ul class="provider-details">
                         <li><span aria-label="Address" class="glyphicon glyphicon-search"></span>
